@@ -1,0 +1,21 @@
+---
+ansible_user: TRIO\administrator
+ansible_password: Tri0_mwP
+ansible_connection: winrm
+ansible_winrm_transport: ntlm
+ansible_port: 5985
+ansible_winrm_server_cert_validation: ignore
+choco_package_all:
+  - 7zip
+  - adoptopenjdk
+  - ccleaner
+  - dotnetcore
+  - googlechrome
+  - greenshot
+  - notepad2-mod
+  - notepadplusplus
+  - pdftkbuilder
+  - slack
+  - sysinternals
+  - anydesk.install
+  - foxitreader

@@ -1,0 +1,29 @@
+---
+# Ansible playbook to run Windows Update and restart, if required
+#
+# http://docs.ansible.com/ansible/win_updates_module.html
+# https://docs.ansible.com/ansible/win_reboot_module.html
+
+- hosts: laptops
+  gather_facts: true
+  tasks:
+    - name: Remove Internal Chocolatey Source
+      win_chocolatey_source:
+        name: Trio
+        state: absent
+    - name: Remove Community Source
+      win_chocolatey_source:
+        name: Community
+        state: absent
+    - name: Add Internal Chocolatey Source
+      win_chocolatey_source:
+        name: Trio
+        state: present
+        source: https://choco.trio.tbt.net.au/nuget/trio
+    - name: Add Community Chocolatey Source
+      win_chocolatey_source:
+        name: Community
+        state: present
+        source: https://choco.trio.tbt.net.au/nuget/Community/
+        priority: 10
+

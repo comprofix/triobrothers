@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MicronetODBC</id>
+    <version>2.7</version>
+    <title>MicronetODBC 2.7 (Install)</title>
+    <authors>Micronet</authors>
+    <owners>Micronet</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MicronetODBC 2.7 (Install)</description>
+  </metadata>
+</package>

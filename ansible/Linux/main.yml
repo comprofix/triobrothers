@@ -1,0 +1,25 @@
+---
+  - name: Install-Packages
+    hosts: linux
+    become: yes
+    tasks:
+
+      - name: Check required packages are installed
+        register: updatesys
+        apt:
+          update_cache: yes
+          name:
+            - zsh
+            - curl
+            - build-essential
+            - git
+            - policykit-1
+          state: present
+
+      - name: Update and upgrade packages
+        apt:
+          name: "*"
+          state: latest
+          update_cache: yes
+          force_apt_get: yes
+        when: ansible_distribution == "Debian"

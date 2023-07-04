@@ -1,0 +1,54 @@
+---
+- name:  Install Office 365
+  hosts: workstations
+  gather_facts: true
+  tasks:
+    - name: Check if Logs Folder Exists
+      win_stat:
+        path: C:\Logs
+      register: my_folder
+
+    - name: Create Logs Folder if not Exists
+      win_file:
+        path: C:\Logs
+        state: directory
+      when:  my_folder.stat.exists == false
+
+    - name: Check if Scripts Folder exist
+      win_stat:
+        path: C:\Scripts
+      register: my_folder
+
+    - name: Create Scripts Folder if not Exists
+      win_file:
+        path: C:\Scripts
+        state: directory
+      when:  my_folder.stat.exists == false
+
+    - name: Copy a single file
+      win_copy:
+        src: ./Scripts/Install-Office365.ps1
+        dest: C:\Scripts\Install-Office365.ps1
+
+    - name: Remove Old Office 365 Install Scheduled Task
+      win_scheduled_task:
+        name: Office365
+        path: \Trio
+        state: absent
+
+    - name: Create Office 365 Install Scheduled Task
+      win_scheduled_task:
+        name: Office365
+        path: \Trio
+        description: Office 365 Install
+        actions:
+          - path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+            arguments: -File C:\Scripts\Install-Office365.ps1
+        triggers:
+          - type: weekly
+            days_of_week: Monday
+            start_boundary: "2021-11-19T03:30:00"
+        username: SYSTEM
+        run_level: highest
+        state: present
+        enabled: yes

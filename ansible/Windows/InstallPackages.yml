@@ -1,0 +1,76 @@
+---
+# Ansible playbook to run Windows Update and restart, if required
+#
+# http://docs.ansible.com/ansible/win_updates_module.html
+# https://docs.ansible.com/ansible/win_reboot_module.html
+
+- hosts: workstations, win7
+  tasks:
+    - set_fact:
+          choco_package_all:
+            - 7zip
+            - adoptopenjdk
+            - ccleaner
+            - dotnetcore
+            - googlechrome
+            - greenshot
+            - micronetodbc
+            - notepad2-mod
+            - notepadplusplus
+            - pdftkbuilder
+            - slack
+            - sysinternals
+            - vcredist-all
+          choco_package_10:
+            - anydesk.install
+          choco_package_10:
+            - anydesk
+            
+  gather_facts: true
+
+  tasks:
+    - name: Remove the default public source
+      win_chocolatey_source:
+        name: chocolatey
+        state: absent
+    - name: Add Community Chocoltaey Proxy Source
+      win_chocolatey_source:
+        name: community
+        state: present
+        source: http://choco.tbt.net.au/nuget/Community/
+    - name: Add Internal Chocolatey Source
+      win_chocolatey_source:
+        name: Trio
+        state: present
+        source: http://choco.tbt.net.au/nuget/trio
+
+- hosts: workstations, win7
+    - name: Install chocolatey packages
+      win_chocolatey:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ choco_package_all }}"
+
+- hosts: workstations
+    - name: Install chocolatey packages
+      win_chocolatey:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ choco_package_10 }}"
+
+- hosts: win7
+    - name: Install chocolatey packages
+      win_chocolatey:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ choco_package_7 }}"
+
+- hosts: workstations, win7
+    - name: Upgrade installed packages
+      win_chocolatey:
+        name: all
+        state: latest
+
+    # reboot only if required
+    - name: Rebooting
+      win_reboot:

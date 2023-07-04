@@ -1,0 +1,7 @@
+*.exe
+*.msi
+*.zip
+*.nupkg
+*.txt
+temp/
+test.ps1

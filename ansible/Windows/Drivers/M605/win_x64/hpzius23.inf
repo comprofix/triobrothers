@@ -1,0 +1,2583 @@
+;/*++
+;
+;© Copyright 2015 HP Development Company, L.P. All rights reserved. 
+;
+;
+;	Dot4Usb INF for all XP 64 bit OSes
+;
+;	HP Inc. Converged DOT4 version 12
+;
+;
+; ----- DO NOT MODIFY HEADER TEXT ABOVE THIS LINE! ------------ 
+;--*/
+
+[Version]
+Signature="$Windows NT$"
+Provider=%INF_Provider%
+DriverVer=09/16/2015,12.3.0.2
+CatalogFile.NT=HPZius23.cat
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+DriverPackageType=PlugAndPlay
+DriverPackageDisplayName="DOT4USB"
+
+;====================================================
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[SourceInfo]
+SourceDirectory=%1%
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\drivers
+Dot4Drivers_CpyFiles = 10,System32\drivers
+Coinstaller_CopyFile_OverWrite = 11
+Coinstaller_CopyFile = 11
+
+[SourceDisksNames.amd64]
+1 = %CD%,,,
+2 = %CD%,,,"drivers\dot4\amd64\winxp"
+
+[SourceDisksFiles.amd64]
+; Driver
+HPZius12.sys = 2
+HPZid412.sys = 2
+hppldcoi.dll = 2
+difxapi.dll = 2
+
+;====================================================
+
+[Manufacturer]
+%HP%=HP_Models,NTAMD64,NTAMD64.6.0,NTAMD64.6.2
+
+[HP_Models]
+
+[HP_Models.NTAMD64]
+;
+; This INF supports models with these PnP IDs
+; (Enumerated by any enumerator (*))
+;
+
+;;;;Nullifier for usbprint for stack teardown
+"HP Color LaserJet 3800"			= NULL_INST,USBPRINT\Hewlett-Packardhp_Co4504
+"HP Color LaserJet 3000" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_Co8785
+"HP Color LaserJet 3600"			= NULL_INST,USBPRINT\Hewlett-PackardHP_Co8665
+"HP LaserJet M3027 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_LaE1E9
+"HP LaserJet M3035 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_La9090
+"HP LaserJet M5025 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_La6B11
+"HP LaserJet M5035 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_LaBA10
+"HP LaserJet M4345 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_La619B
+"HP LaserJet M4730 MFP" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_Co3554
+"HP Color LaserJet CP4005" 			= NULL_INST,USBPRINT\Hewlett-PackardHP_CoEC5C
+"HP Color LaserJet CP3505 " 			= NULL_INST,USBPRINT\Hewlett-PackardHP_Co994D
+"HP Color LaserJet 4700"			= NULL_INST,USBPRINT\Hewlett-PackardHP_CoF1B4
+"HP Color LaserJet 4730"			= NULL_INST,USBPRINT\Hewlett-PackardHP_Co2FFA
+"HP LaserJet 5200"			= NULL_INST,USBPRINT\Hewlett-PackardHP_LaB67C,DOT4PRT\vid_03f0&pid_6417&rev_0100
+"HP LaserJet 5200L"			= NULL_INST,USBPRINT\Hewlett-PackardHP_La14B6,DOT4PRT\vid_03f0&pid_6617&rev_0100
+"HP LaserJet P3005" 				= NULL_INST,USBPRINT\Hewlett-PackardHP_La023A,DOT4PRT\vid_03F0&pid_7317&rev_0100
+"HP LaserJet P3004" 				= NULL_INST,USBPRINT\Hewlett-PackardHP_LaC2FB,DOT4PRT\vid_03F0&pid_7617&rev_0100
+"HP LaserJet 5200LX"                            = NULL_INST,USBPRINT\Hewlett-PackardHP_La4C94,DOT4PRT\vid_03f0&pid_8917&rev_0100,DOT4PRT\vid_03f0&pid_8917
+"HP LaserJet 2420" 				= NULL_INST,USBPRINT\Hewlett-Packardhp_LaA304
+"HP Color LaserJet 5550" 			= NULL_INST,USBPRINT\Hewlett-Packardhp_coC8EB
+"HP LaserJet 4240"                              = NULL_INST,USBPRINT\Hewlett-Packardhp_La8AE7,DOT4PRT\VID_03F0&PID_6A17&rev_0100
+"HP LaserJet 4250"                              = NULL_INST,USBPRINT\Hewlett-Packardhp_La1AE6,DOT4PRT\VID_03F0&PID_2417&rev_0100
+"HP LaserJet 4350"                              = NULL_INST,USBPRINT\Hewlett-Packardhp_LaDAB7,DOT4PRT\vid_03f0&pid_2317&rev_0100
+"HP LaserJet P4014"                             = NULL_INST,USBPRINT\Hewlett-PackardHP_LaE77A 
+"HP LaserJet P4515"                             = NULL_INST,USBPRINT\Hewlett-PackardHP_La26AB
+"HP LaserJet P4015"                             = NULL_INST,USBPRINT\Hewlett-PackardHP_La27BB
+"HP LaserJet 3050"  				= NULL_INST,USBPRINT\Hewlett-PackardHP_LaAEDE,DOT4PRT\vid_03f0&pid_3217&mi_00,DOT4PRT\vid_03f0&pid_3217&Rev_0100&mi_00
+"HP LaserJet 3052" 				= NULL_INST,USBPRINT\Hewlett-PackardHP_La6F5F,DOT4PRT\vid_03f0&pid_3317&mi_00,DOT4PRT\vid_03f0&pid_3317&Rev_0100&mi_00
+"HP LaserJet 3055"  				= NULL_INST,USBPRINT\Hewlett-PackardHP_LaAD1E,DOT4PRT\vid_03f0&pid_3417&mi_00,DOT4PRT\vid_03f0&pid_3417&Rev_0100&mi_00
+"HP LaserJet 3390"  				= NULL_INST,USBPRINT\Hewlett-PackardHP_LaAE2B,DOT4PRT\vid_03f0&pid_3517&mi_00,DOT4PRT\vid_03f0&pid_3517&Rev_0100&mi_00
+"hp LaserJet 1320 series" 			= NULL_INST,usbprint\hewlett-packardhp_La0CA5
+"hp color LaserJet 2550 series"  		= NULL_INST,usbprint\hewlett-packardhp_co650A,DOT4PRT\vid_03f0&pid_1c17,DOT4PRT\vid_03f0&pid_1c17&Rev_0100
+"HP CM8050 MFP with Edgeline"                   = NULL_INST,USBPRINT\Hewlett-PackardHP_CM21AA 
+"HP CM8060 MFP with Edgeline"                   = NULL_INST,USBPRINT\Hewlett-PackardHP_CM12EE
+
+"HP LaserJet M9050 MFP"                         = NULL_INST,USBPRINT\Hewlett-PackardHP_LaE9DD
+"HP LaserJet M9040 MFP"                         = NULL_INST,USBPRINT\Hewlett-PackardHP_La38DC
+"HP Color LaserJet CM6040 MFP"               = NULL_INST,USBPRINT\Hewlett-PackardHP_Co23A3
+"HP Color LaserJet CP6015"               = NULL_INST,USBPRINT\Hewlett-PackardHP_CoC45C
+
+"HP Color LaserJet CM3530 MFP"           = NULL_INST,USBPRINT\Hewlett-PackardHP_CoAB37
+"HP Color LaserJet CP3525"               = NULL_INST,USBPRINT\Hewlett-PackardHP_CoF94C
+"HP Color LaserJet CM6030 MFP"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Co94A2
+
+"HP LaserJet P3010 Series"     = NULL_INST,usbprint\Hewlett-PackardHP_La513A,usbprint\Hewlett-PackardHP_La507A
+"HP LaserJet P3010 Series"     = NULL_INST,usbprint\Hewlett-PackardHP_La90BB,usbprint\Hewlett-PackardHP_La52FA
+"HP LaserJet P3010 Series"     = NULL_INST,usbprint\Hewlett-PackardHP_La923B,usbprint\Hewlett-PackardHP_La937B
+"HP LaserJet P3010 Series"     = NULL_INST,usbprint\Hewlett-PackardHP_La53BA,usbprint\Hewlett-PackardHP_La57FA
+"HP LaserJet P3010 Series"     = NULL_INST,usbprint\Hewlett-PackardHP_La973B,usbprint\hewlett-packardhp_la3696
+
+"HP Color LaserJet CP4520 Series" = NULL_INST,usbprint\Hewlett-PackardHP_Co9E83
+"HP Color LaserJet CP4020 Series" = NULL_INST,usbprint\Hewlett-PackardHP_Co8E93
+"HP LaserJet M9059 MFP"        = NULL_INST,usbprint\Hewlett-PackardHP_La8800
+"HP Color LaserJet CM6049f MFP"= NULL_INST,usbprint\Hewlett-PackardHP_Co1D89
+"HP LaserJet M4349x MFP"       = NULL_INST,usbprint\Hewlett-PackardHP_La9862
+
+"HP Color LaserJet 2820"       = NULL_INST,DOT4PRT\Vid_03f0&Pid_2617&rev_0100&mi_00,DOT4PRT\Vid_03f0&Pid_2617&mi_00
+"HP Color LaserJet 2840"       = NULL_INST,DOT4PRT\Vid_03f0&Pid_2817&rev_0100&mi_00,DOT4PRT\Vid_03f0&Pid_2817&mi_00
+"HP Color LaserJet 2830"       = NULL_INST,DOT4PRT\Vid_03f0&Pid_2717&rev_0100&mi_00,DOT4PRT\Vid_03f0&Pid_2717&mi_00
+
+"HP Color LaserJet 2820"       = NULL_INST,USBPRINT\Hewlett-PackardHP_Co1A85
+"HP Color LaserJet 2830"       = NULL_INST,USBPRINT\Hewlett-PackardHP_Co8A84 
+"HP Color LaserJet 2840"       = NULL_INST,USBPRINT\Hewlett-PackardHP_CoBA86
+
+"HP Color LaserJet CM4540 MFP"    = NULL_INST,USBPRINT\Hewlett-PackardHP_CoFA77,DOT4PRT\VID_03F0&PID_9917&REV_0100,DOT4PRT\VID_03F0&PID_9917&REV_0100&mi_00
+"HP Color LaserJet CP5520 Series" = NULL_INST,USBPRINT\Hewlett-PackardHP_Co6287,DOT4PRT\VID_03F0&PID_9B17&REV_0100,DOT4PRT\VID_03F0&PID_9B17&REV_0100&mi_00
+"HP Color LaserJet CM4549 MFP"    = NULL_INST,USBPRINT\Hewlett-PackardHP_CoFBAB,DOT4PRT\VID_03F0&PID_A217&REV_0100,DOT4PRT\VID_03F0&PID_A217&REV_0100&mi_00
+
+"HP LaserJet M4555 MFP"           = NULL_INST,USBPRINT\Hewlett-PackardHP_LaAEDE,DOT4PRT\VID_03F0&PID_9C17&REV_0100,DOT4PRT\VID_03F0&PID_9C17&REV_0100&mi_00,DOT4PRT\VID_03F0&PID_9C17&mi_00
+"HP LaserJet M4559 MFP"           = NULL_INST,USBPRINT\Hewlett-PackardHP_LaAEDE,DOT4PRT\VID_03F0&PID_A317&REV_0100,DOT4PRT\VID_03F0&PID_A317&REV_0100&mi_00,DOT4PRT\VID_03F0&PID_A317&mi_00
+
+"HP LaserJet Enterprise 500 color M551"           = NULL_INST,USBPRINT\Hewlett-ParkardHP_La3A56
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series"           = NULL_INST,USBPRINT\Hewlett-PackardHP_LAD678
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series"           = NULL_INST,USBPRINT\Hewlett-PackardHP_LaD738
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La17F9
+
+"HP LaserJet Enterprise 500 MFP M525 Series"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La2DAB
+"HP LaserJet Enterprise 500 MFP M575 Series"           = NULL_INST,USBPRINT\Hewlett-PackardHP_LaF157
+
+"HP LaserJet Enterprise 700 M712"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La4ba9
+"HP LaserJet Enterprise 700 color MFP  M775"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La6b56
+"HP LaserJet Enterprise MFP M725"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La86f0
+"HP LaserJet Enterprise M806"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La16c6
+"HP LaserJet Enterprise flow MFP M830"           = NULL_INST,USBPRINT\Hewlett-PackardHP_La7da1
+
+"HP Color LaserJet Enterprise M855"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Cofd5e
+
+"HP Color LaserJet Enterprise flow MFP M880"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Co6bd1
+
+"HP Color LaserJet Enterprise M750"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Cofdae
+
+"HP Officejet Enterprise Color X555"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Ofce48
+"HP Officejet Enterprise Color MFP X585"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Of2503
+"HP Officejet Enterprise Color Flow MFP X585"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Of588a
+"HP Color LaserJet Enterprise MFP M680"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Co9ffc
+"HP Color LaserJet Enterprise Flow MFP M680"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Co70c6
+"HP Color LaserJet Enterprise MFP M651"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Cofd3e
+
+
+"HP LaserJet Enterprise MFP M630"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Lad760
+"HP LaserJet Enterprise Flow MFP M630"           = NULL_INST,USBPRINT\Hewlett-PackardHP_Ladebf
+
+
+"HP Deskjet 6980 Series (DOT4USB)"         	= D4Usb_Poll_Inst,usb\vid_03f0&pid_8804&mi_01
+"HP Deskjet 6940 Series (DOT4USB)"         	= D4Usb_Poll_Inst,usb\vid_03f0&pid_8904&mi_01
+"Photosmart 2570 series (DOT4USB)" 	   	= D4Usb_Poll_Inst,usb\vid_03f0&pid_4e11&mi_02
+"Photosmart 3100 Series (DOT4USB)"	   	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5011&mi_02
+"Photosmart 3200 Series (DOT4USB)"	   	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5111&mi_02
+"Photosmart 3300 Series (DOT4USB)"	   	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5211&mi_02
+"Officejet 6300 series (DOT4USB)"          	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5311&mi_02
+"Officejet 4300 series (DOT4USB)"          	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5411&mi_02
+"Deskjet F300 series (DOT4USB)"            	= D4Usb_Poll_Inst,usb\vid_03f0&pid_5511&mi_02
+"HP Photosmart A710 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_1c02&mi_01
+"HP Photosmart A610 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_1b02&mi_01
+"HP Photosmart A510 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_1a02&mi_01
+"HP Photosmart A310 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_1d02&mi_01
+"HP Photosmart A430 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_1902&mi_02
+"HP Photosmart D7300 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_c702&mi_01
+"HP Photosmart D6100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_c502&mi_01
+"HP Photosmart D7100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_c602&mi_01
+"HP Photosmart D5100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_c402&mi_01
+"HP Photosmart C4100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&pid_5711&mi_02 
+"HP Photosmart C5100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_5811&mi_02
+"HP Photosmart C7100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_5a11&mi_02
+"HP Photosmart C6100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_5911&mi_02
+"HP Photosmart C3100 series (DOT4USB)" 		= D4Usb_Poll_Inst,usb\vid_03f0&Pid_5611&mi_02
+"HP Officejet Pro K5400 (DOT4USB)"      	= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_2012&mi_01,usb\vid_03f0&pid_2012&rev_0100&mi_01
+"HP Officejet Pro L7500 (DOT4USB)"      	= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03f0&Pid_2112&Mi_02,usb\Vid_03f0&Pid_2112&rev_0100&Mi_02
+"HP Officejet Pro L7600 (DOT4USB)"      	= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03f0&Pid_2212&Mi_02,usb\Vid_03f0&Pid_2212&rev_0100&Mi_02
+"HP Officejet Pro L7700 (DOT4USB)"      	= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03f0&Pid_2312&Mi_02,usb\Vid_03f0&Pid_2312&rev_0100&Mi_02
+"HP Officejet Pro K5300 (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03f0&Pid_1f12&Mi_01,usb\Vid_03f0&Pid_1f12&rev_0100&Mi_01
+"HP Officejet Pro L7300 (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03f0&Pid_2512&Mi_02,usb\Vid_03f0&Pid_2512&rev_0100&Mi_02
+"HP Officejet J5700 Series (DOT4USB)"   = D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_5b11&MI_02,usb\vid_03f0&pid_5b11&rev_0100&MI_02
+
+"HP Photosmart D5060 Printer (DOT4USB) " 	= D4Usb_Poll_Inst,USB\Vid_03f0&Pid_c802&mi_01,USB\Vid_03f0&Pid_c802&rev_0100&mi_01   
+
+"HP Color LaserJet 3800 (DOT4USB)"     		= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_6817
+"HP Color LaserJet 3000(DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_6717&rev_0100,usb\VID_03F0&PID_6717
+"HP Color LaserJet 3600(DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_6917&rev_0100,usb\VID_03F0&PID_6917
+"hp color LaserJet 5550 (DOT4USB)"		= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_1f17
+"hp color LaserJet 2550 series (DOT4USB)"  	= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1C17
+"hp LaserJet 2420 (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_2917
+"hp LaserJet 1320 series (DOT4USB)" 	 	= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1D17
+"HP Color LaserJet 4700 (DOT4USB)"		= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_6217
+"HP Color LaserJet 4730mfp (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_6317
+"hp LaserJet 4350 (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_2317
+"hp LaserJet 3015 (DOT4USB)"			= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1617
+"hp LaserJet 3020 (DOT4USB)"			= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1717
+"hp LaserJet 3030 (DOT4USB)"			= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1817
+"hp LaserJet 3380 (DOT4USB)"			= D4Usb_Poll_Inst_Use_Coinstaller,USB\Vid_03f0&Pid_1917
+"HP LaserJet 5200 (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_6417
+"HP LaserJet 5200L (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03f0&pid_6617
+"HP LaserJet P3005  (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03F0&pid_7317
+"HP LaserJet P3004  (DOT4USB)" 			= D4Usb_Poll_Inst_Use_Coinstaller,usb\vid_03F0&pid_7617
+"HP LaserJet M5035 MFP (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7217&rev_0100,usb\VID_03F0&PID_7217
+"HP LaserJet M5025 MFP (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7917&rev_0100,usb\VID_03F0&PID_7917
+"HP LaserJet M3035 MFP (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7517&rev_0400,usb\VID_03F0&PID_7517
+"HP LaserJet M3027 MFP (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7A17&rev_0400,usb\VID_03F0&PID_7A17
+"HP LaserJet M4345 MFP (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7417&rev_0100,usb\VID_03F0&PID_7417
+"HP Color LaserJet CP4005 (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7B17&rev_0100,usb\VID_03F0&PID_7B17
+"HP Color LaserJet CM4730 MFP (DOT4USB)" 	= D4Usb_Poll_Inst_Use_Coinstaller,usb\Vid_03F0&Pid_7D17&rev_0100,usb\Vid_03F0&Pid_7D17
+"HP Color LaserJet CP3505 (DOT4USB)" 		= D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7817&rev_0100,usb\VID_03F0&PID_7817
+
+"HP Color LaserJet 2820 (DOT4USB)"              = LJ2820_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2617&rev_0100&mi_00
+"HP Color LaserJet 2830 (DOT4USB)"              = LJ2830_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2717&rev_0100&mi_00
+"HP Color LaserJet 2840 (DOT4USB)"              = LJ2840_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2817&rev_0100&mi_00
+
+
+"HP CM8050 MFP with Edgeline (DOT4USB)"         = LJCM8050_D4Usb_Poll_Inst,usb\VID_03F0&PID_7717&rev_0100,usb\VID_03F0&PID_7717
+"HP CM8060 MFP with Edgeline (DOT4USB)"         = LJCM8060_D4Usb_Poll_Inst,usb\VID_03F0&PID_7117&rev_0100,usb\VID_03F0&PID_7117
+
+"HP LaserJet M9050 MFP (DOT4USB)" = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_8317&rev_0100,usb\VID_03F0&PID_8317
+"HP LaserJet M9040 MFP (DOT4USB)" = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_8417&rev_0100,usb\VID_03F0&PID_8417
+"HP Color LaserJet CP6015 (DOT4USB)"     = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_6F17&rev_0100,usb\VID_03F0&PID_6F17
+"HP Color LaserJet CM6040 MFP (DOT4USB)"     = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_7C17&rev_0100,usb\VID_03F0&PID_7C17
+
+"HP LaserJet P3010 Series (DOT4USB)"      = LJP3010_D4Usb_Poll_Inst,USB\VID_03F0&PID_8D17&REV_0100,USB\VID_03F0&PID_8D17
+"HP Color LaserJet CP4520 Series (DOT4USB)"     = LJCP4520_D4Usb_Poll_Inst,USB\VID_03F0&PID_8717
+"HP Color LaserJet CP4020 Series (DOT4USB)"     = LJCP4020_D4Usb_Poll_Inst,USB\VID_03F0&PID_8817
+
+
+"HP Photosmart A320 Printer series (DOT4USB)" 	= PSA320_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_1e02&mi_01
+"HP Photosmart A440 Printer series (DOT4USB) " 	= PSA440_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_1f02&mi_02
+"HP Photosmart C4200 Printer series (DOT4USB) " = PS4200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_5c11&mi_02
+"HP Deskjet F2100 Printer series (DOT4USB) " 	= DJ2100_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7D04&mi_02
+"HP Deskjet F4100 Printer series (DOT4USB) " 	= DJ4100_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7E04&mi_02
+
+"HP 915(DOT4USB)"                               = 915_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_2704&mi_02
+"HP Photosmart D5300 series (DOT4USB)" 		= PS5300_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6811&MI_01 
+"HP Photosmart D7200 series (DOT4USB) " 	= PSD7200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6911&MI_01
+"HP Photosmart C6200 series (DOT4USB)" 		= PSC6200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6a11&MI_02
+"HP Photosmart C8100 series (DOT4USB)" 		= PS8100_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6411&mi_02
+"HP Photosmart C5200 series (DOT4USB)" 		= PS5200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_5d11&mi_02
+"HP Photosmart A820 series  (DOT4USB)" 		= PSA820_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2902&mi_01
+"HP Photosmart D7400 series (DOT4USB)" 		= PS7400_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_5e11&mi_01
+"HP Photosmart A520 series  (DOT4USB)" 		= PSA520_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2602&MI_01	
+"HP Photosmart C7200 series (DOT4USB)" 		= PS7200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6511&mi_02
+"HP Photosmart A620 series  (DOT4USB)" 		= PSA620V_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2702&mi_01
+"HP Photosmart C4380 series (DOT4USB)" 		= PS4380_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6611&mi_02
+"HP LaserJet 5200LX (DOT4USB)"                  = LJ5200LX_D4Usb_Poll_Inst,USB\vid_03f0&pid_8917&rev_0100,USB\vid_03f0&pid_8917
+
+"HP LaserJet P4014 (DOT4USB)" = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_8217&rev_0100,usb\VID_03F0&PID_8217
+"HP LaserJet P4515 (DOT4USB)" = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_8017&rev_0100,usb\VID_03F0&PID_8017
+"HP LaserJet P4015 (DOT4USB)" = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_8117&rev_0100,usb\VID_03F0&PID_8117
+
+"HP LaserJet 3050 (DOT4USB)"  			= LJ3050_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_3217&rev_0100&mi_00,USB\Vid_03f0&Pid_3217&mi_00
+"HP LaserJet 3052 (DOT4USB)"  			= LJ3052_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_3317&rev_0100&mi_00,USB\Vid_03f0&Pid_3317&mi_00
+"HP LaserJet 3055 (DOT4USB)"  			= LJ3055_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_3417&rev_0100&mi_00,USB\Vid_03f0&Pid_3417&mi_00
+"HP LaserJet 3390 (DOT4USB)"  			= LJ3390_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_3517&rev_0100&mi_00,USB\Vid_03f0&Pid_3517&mi_00
+"hp LaserJet 2430 (DOT4USB)"                    = LJ2430_D4Usb_Poll_Inst,USB\VID_03F0&PID_2A17
+"hp LaserJet 2410 (DOT4USB)"                    = LJ2410_D4Usb_Poll_Inst,USB\VID_03F0&PID_2517
+"HP LaserJet 4250 (DOT4USB)"                    = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_2417
+"HP LaserJet 4240 (DOT4USB)"                    = D4Usb_Poll_Inst_Use_Coinstaller,usb\VID_03F0&PID_6A17
+
+
+
+
+
+
+
+
+
+; Clansy
+
+"HP Photosmart D5400 series (DOT4USB)"  = PSD5400_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6d11&mi_01
+"HP Deskjet F4200 series (DOT4USB)"     = PSF4200_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2504&mi_02
+"HP Photosmart C4400 series (DOT4USB)"  = PSC4400_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_6c11&mi_02
+"HP Deskjet F2200 series (DOT4USB)"     = DJF2200_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_2404&mi_02
+"HP Photosmart Pro B8800 series(DOT4USB)"= PSB8800_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_D002&mi_01
+"HP Photosmart C4340 series (DOT4USB)"  = PSC4340_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_6711&mi_02
+"HP Deskjet D2500 series (DOT4USB)"     = PSD2500_D4Usb_Poll_Inst,usb\Vid_03f0&Pid_1E04&mi_01
+"HP Photosmart Pro B9100 series (DOT4USB)"= PSB9100_D4Usb_Poll_Inst,usb\vid_03f0&pid_bd02&mi_01
+
+"HP Color LaserJet CM3530 MFP (DOT4USB)" = LJCM3530_D4Usb_Poll_Inst,usb\VID_03F0&PID_8A17
+"HP Color LaserJet CP3525 (DOT4USB)"      = LJCP3525_D4Usb_Poll_Inst,usb\VID_03F0&PID_8517
+"HP Color LaserJet CM6030 MFP (DOT4USB)"  = LJCM6030_D4Usb_Poll_Inst,usb\VID_03F0&PID_8C17
+
+; BPD SW (Sg)
+
+"Officejet H470 (DOT4USB)"   = OJH470_D4Usb_Poll_Inst,usb\vid_03f0&pid_2812&MI_01,usb\vid_03f0&pid_2812&rev_0100&MI_01
+"Officejet Pro K8600 (DOT4USB)"   = OJK8600_D4Usb_Poll_Inst,usb\vid_03f0&pid_2712&MI_01,usb\vid_03f0&pid_2712&rev_0100&MI_01
+"Officejet Pro L7400 (DOT4USB)"          = L7400_D4Usb_Poll_Inst,USB\vid_03f0&pid_3412&rev_0100&MI_02,USB\vid_03f0&pid_3412&MI_02
+"Officejet J5500 (DOT4USB)"           = OJJ5500_D4Usb_Poll_Inst,usb\vid_03f0&pid_3012&MI_02,usb\vid_03f0&pid_3012&rev_0100&MI_02
+"Officejet J3600 (DOT4USB)"           = OJJ3600_D4Usb_Poll_Inst,usb\vid_03f0&pid_3112&MI_02,usb\vid_03f0&pid_3112&rev_0100&MI_02
+"Officejet J3500 (DOT4USB)"           = OJJ3500_D4Usb_Poll_Inst,usb\vid_03f0&pid_3212&MI_02,usb\vid_03f0&pid_3212&rev_0100&MI_02
+
+;Hemingway
+
+"HP Photosmart C6300 series(DOT4USB)"           = PSC6300_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7011&mi_02
+"HP Photosmart C5300 series (DOT4USB)"           = PS5300H_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7111&mi_02
+"HP Photosmart C5500 series(DOT4USB)"           = PSC5500_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7211&mi_02
+"HP Photosmart D7500 series(DOT4USB)"           = PSD7500_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6f11&mi_01
+"HP Deskjet D730 (DOT4USB)"                     = DJD730_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2804&mi_01
+"HP Photosmart B8500 series(DOT4USB)"           = PSB8500_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_D102&mi_01
+"HP Photosmart C4500 series (DOT4USB)"          = PSC4500_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_6b11&mi_02
+"HP Deskjet F735 (DOT4USB)"                     = DJF735_D4Usb_Poll_Inst,USB\Vid_03F0&Pid_2904&MI_02
+
+; BPD Spring' 09
+
+"Officejet Pro 8000 A809 (DOT4USB)" = OJPA809_D4Usb_Poll_Inst,USB\vid_03F0&pid_3612&mi_01,usb\vid_03F0&pid_3612&rev_0100&mi_01
+"Officejet Pro 8500 A909a (DOT4USB)" = OJPA909a_D4Usb_Poll_Inst,USB\vid_03F0&pid_3812&mi_02,usb\vid_03F0&pid_3812&rev_0100&mi_02
+"Officejet Pro 8500 A909g (DOT4USB)" = OJPA909g_D4Usb_Poll_Inst,USB\vid_03F0&pid_3912&mi_02,usb\vid_03F0&pid_3912&rev_0100&mi_02
+"Officejet Pro 8500 A909n (DOT4USB)" = OJPA909n_D4Usb_Poll_Inst,USB\vid_03F0&pid_4012&mi_02,usb\vid_03F0&pid_4012&rev_0100&mi_02
+
+"Officejet 6000 E609a (DOT4USB)" = OJE609a_D4Usb_Poll_Inst,USB\vid_03F0&pid_4212&mi_01,usb\vid_03F0&pid_4212&rev_0100&mi_01
+"Officejet 6000 E609n (DOT4USB)" = OJE609n_D4Usb_Poll_Inst,USB\vid_03F0&pid_4312&mi_01,usb\vid_03F0&pid_4312&rev_0100&mi_01
+"Officejet 6500 E709a (DOT4USB)" = OJE709a_D4Usb_Poll_Inst,USB\vid_03F0&pid_4412&mi_02,usb\vid_03F0&pid_4412&rev_0100&mi_02
+"Officejet 6500 E709n (DOT4USB)" = OJE709n_D4Usb_Poll_Inst,USB\vid_03F0&pid_4512&mi_02,usb\vid_03F0&pid_4512&rev_0100&mi_02
+
+;BDP Spring' 09 Braveheart and Yellowtail
+
+"Officejet J6400 Series (DOT4USB)"              = J6400_D4Usb_Poll_Inst,USB\vid_03f0&pid_3312&rev_0100&mi_02,USB\vid_03f0&pid_3312&mi_02
+"Officejet J4500 (DOT4USB)"                     = J4500_D4Usb_Poll_Inst,USB\vid_03F0&pid_2A12&rev_0100&mi_02,USB\vid_03F0&pid_2A12&mi_02
+"Officejet J4680 (DOT4USB)"                     = J4680_D4Usb_Poll_Inst,USB\vid_03F0&pid_2C12&rev_0100&mi_02,USB\vid_03F0&pid_2C12&mi_02
+"Officejet J4660 (DOT4USB)"                     = J4660_D4Usb_Poll_Inst,USB\vid_03F0&pid_2B12&rev_0100&mi_02,USB\vid_03F0&pid_2B12&mi_02
+
+; DCS Batali
+
+"HP Photosmart C309a series (DOT4USB)"          = PSC309a_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7311&mi_02
+"HP Photosmart C309b series (DOT4USB)"          = PSC309b_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7911&mi_02
+"HP Deskjet D1600 series (DOT4USB)"             = DJD1600_D4Usb_Poll_Inst,USB\Vid_03F0&Pid_7F11&mi_01
+"HP Deskjet F4400 series (DOT4USB)"             = DJF4400_D4Usb_Poll_Inst,USB\Vid_03F0&Pid_7711&mi_02
+"HP Deskjet D2600 series (DOT4USB)"             = DJD2600_D4Usb_Poll_Inst,USB\Vid_03F0&Pid_8011&mi_01
+"HP Photosmart C4600 series (DOT4USB)"          = PSC4600_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_7411&mi_02
+
+; BPD Fall'09
+
+"Officejet 7000 E809a (DOT4USB)" = OJE809a_D4Usb_Poll_Inst,USB\vid_03f0&pid_4612&rev_0100&mi_01,USB\vid_03f0&pid_4612&mi_01
+"Officejet 4500 G510g-m (DOT4USB)" = OJG510g-m_D4Usb_Poll_Inst,USB\vid_03f0&pid_2d12&rev_0100&mi_02,USB\vid_03f0&pid_2d12&mi_02
+"Officejet 4500 G510a-f (DOT4USB)" = OJG510a-f_D4Usb_Poll_Inst,USB\vid_03f0&pid_4712&rev_0100&mi_02,USB\vid_03f0&pid_4712&mi_02 
+"Officejet 4500 G510n-z (DOT4USB)" = OJG510n-z_D4Usb_Poll_Inst,USB\Vid_03f0&Pid_2e12&rev_0100&mi_02,USB\Vid_03f0&Pid_2e12&mi_02
+
+"HP LaserJet M9059 MFP(DOT4USB)"                = LJM9059_D4Usb_Poll_Inst,USB\VID_03F0&PID_9617&REV_0100,USB\VID_03F0&PID_9617
+"HP Color LaserJet CM6049f MFP(DOT4USB)"        = LJCM6049f_D4Usb_Poll_Inst,USB\VID_03F0&PID_9517&REV_0100,USB\VID_03F0&PID_9517
+"HP LaserJet M4349x MFP(DOT4USB)"               = LJM4349x_D4Usb_Poll_Inst,USB\VID_03F0&PID_9717&REV_0100,USB\VID_03F0&PID_9717
+
+
+; BPD Fall'10
+
+"Officejet 100 Mobile L411 (DOT4USB)" = OJ100MobileL411_D4Usb_Poll_Inst,USB\vid_03f0&pid_4912&rev_0100&mi_01,USB\vid_03f0&pid_4912&mi_01
+"Officejet 150 Mobile L511 (DOT4USB)" =  OJ150MobileL511_D4Usb_Poll_Inst,USB\vid_03f0&pid_5012&rev_0100&mi_02,USB\vid_03f0&pid_5012&mi_02
+"Officejet 4500 K710 (DOT4USB)" = OJG510g-m_D4Usb_Poll_Inst,USB\vid_03f0&pid_5712&rev_0100&mi_02,USB\vid_03f0&pid_5712&mi_02
+
+"HP Color LaserJet CM4540 MFP (DOT4USB)"        = LJCM4540_D4Usb_Poll_Inst,USB\VID_03F0&PID_9917,USB\VID_03F0&PID_9917&REV_0100&mi_00
+"HP Color LaserJet CP5520 Series (DOT4USB)"     = LJCP5520_D4Usb_Poll_Inst,USB\VID_03F0&PID_9B17,USB\VID_03F0&PID_9B17&REV_0100&mi_00
+"HP Color LaserJet CM4549 MFP (DOT4USB)"        = LJCM4549_D4Usb_Poll_Inst,USB\VID_03F0&PID_A217,USB\VID_03F0&PID_A217&REV_0100&mi_00
+
+"HP LaserJet M4555 MFP (DOT4USB)"               = LJM4555_D4Usb_Poll_Inst,USB\VID_03F0&PID_9C17,USB\VID_03F0&PID_9C17&REV_0100&mi_00,USB\VID_03F0&PID_9C17&REV_0100,USB\VID_03F0&PID_9C17&mi_00
+"HP LaserJet M4559 MFP (DOT4USB)"               = LJM4559_D4Usb_Poll_Inst,USB\VID_03F0&PID_A317,USB\VID_03F0&PID_A317&REV_0100&mi_00,USB\VID_03F0&PID_A317&REV_0100,USB\VID_03F0&PID_A317&mi_00
+
+"HP LaserJet Enterprise 500 color M551 (DOT4USB)"               = LJM551_D4Usb_Poll_Inst,USB\VID_03F0&PID_A417 ,USB\VID_03F0&PID_A417&mi_00 ,USB\VID_03F0&PID_A417&REV_0100 ,USB\VID_03F0&PID_A417&REV_0100&mi_00
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series (DOT4USB)"               = LJM601_D4Usb_Poll_Inst,USB\VID_03F0&PID_A517 ,USB\VID_03F0&PID_A517&mi_00 ,USB\VID_03F0&PID_A517&REV_0100 ,USB\VID_03F0&PID_A517&REV_0100&mi_00
+
+"HP LaserJet Enterprise 500 MFP M525 Series (DOT4USB)"               = LJM525_D4Usb_Poll_Inst,USB\VID_03F0&PID_9E17 ,USB\VID_03F0&PID_9E17&mi_00 ,USB\VID_03F0&PID_9E17&REV_0100 ,USB\VID_03F0&PID_9E17&REV_0100&mi_00
+"HP LaserJet Enterprise 500 MFP M575 Series (DOT4USB)"               = LJM575_D4Usb_Poll_Inst,USB\VID_03F0&PID_9F17 ,USB\VID_03F0&PID_9F17&mi_00 ,USB\VID_03F0&PID_9F17&REV_0100 ,USB\VID_03F0&PID_9F17&REV_0100&mi_00
+
+"HP LaserJet Enterprise 700 M712 (DOT4USB)"               = LJM712_D4Usb_Poll_Inst,USB\VID_03F0&PID_A617 ,USB\VID_03F0&PID_A617&mi_00 ,USB\VID_03F0&PID_A617&REV_0100 ,USB\VID_03F0&PID_A617&REV_0100&mi_00
+"HP LaserJet Enterprise 700 color MFP  M775 (DOT4USB)"               = LJM775_D4Usb_Poll_Inst,USB\VID_03F0&PID_9A17 ,USB\VID_03F0&PID_9A17&mi_00 ,USB\VID_03F0&PID_9A17&REV_0100 ,USB\VID_03F0&PID_9A17&REV_0100&mi_00
+"HP LaserJet Enterprise MFP M725 (DOT4USB)"               = LJM725_D4Usb_Poll_Inst,USB\VID_03F0&PID_9D17 ,USB\VID_03F0&PID_9D17&mi_00 ,USB\VID_03F0&PID_9D17&REV_0100 ,USB\VID_03F0&PID_9D17&REV_0100&mi_00
+
+"HP Color LaserJet Enterprise M855 (DOT4USB)"               = LJM855_D4Usb_Poll_Inst,USB\VID_03F0&PID_1C2A ,USB\VID_03F0&PID_1C2A&mi_00 ,USB\VID_03F0&PID_1C2A&REV_0100 ,USB\VID_03F0&PID_1C2A&REV_0100&mi_00
+"HP Color LaserJet flow MFP M880 (DOT4USB)"               = LJM880_D4Usb_Poll_Inst,USB\VID_03F0&PID_1D2A ,USB\VID_03F0&PID_1D2A&mi_00 ,USB\VID_03F0&PID_1D2A&REV_0100 ,USB\VID_03F0&PID_1D2A&REV_0100&mi_00
+"HP Color LaserJet Enterprise M750 (DOT4USB)"               = LJM750_D4Usb_Poll_Inst,USB\VID_03F0&PID_372a ,USB\VID_03F0&PID_372a&mi_00 ,USB\VID_03F0&PID_372a&REV_0100 ,USB\VID_03F0&PID_372a&REV_0100&mi_00
+"HP Officejet Enterprise Color X555 (DOT4USB)"               = OJX555_D4Usb_Poll_Inst,USB\VID_03F0&PID_352A ,USB\VID_03F0&PID_352A&mi_00 ,USB\VID_03F0&PID_352A&REV_0100 ,USB\VID_03F0&PID_352A&REV_0100&mi_00
+"HP Officejet Enterprise Color MFP X585	(DOT4USB)"               = OJX585_D4Usb_Poll_Inst,USB\VID_03F0&PID_2B2A ,USB\VID_03F0&PID_2B2A&mi_00 ,USB\VID_03F0&PID_2B2A&REV_0100 ,USB\VID_03F0&PID_2B2A&REV_0100&mi_00
+"HP Officejet Enterprise Color Flow MFP X585 (DOT4USB)"               = OJFX585_D4Usb_Poll_Inst,USB\VID_03F0&PID_362A ,USB\VID_03F0&PID_362A&mi_00 ,USB\VID_03F0&PID_362A&REV_0100 ,USB\VID_03F0&PID_362A&REV_0100&mi_00
+
+"HP LaserJet Enterprise M806 (DOT4USB)"               = LJM806_D4Usb_Poll_Inst,USB\VID_03F0&PID_1F2A ,USB\VID_03F0&PID_1F2A&mi_00 ,USB\VID_03F0&PID_1F2A&REV_0100 ,USB\VID_03F0&PID_1F2A&REV_0100&mi_00
+"HP LaserJet Enterprise flow MFP M830 (DOT4USB)"               = LJM830_D4Usb_Poll_Inst,USB\VID_03F0&PID_1E2A ,USB\VID_03F0&PID_1E2A&mi_00 ,USB\VID_03F0&PID_1E2A&REV_0100 ,USB\VID_03F0&PID_1E2A&REV_0100&mi_00
+"HP Color LaserJet Enterprise MFP M680 (DOT4USB)"               = LJM680_D4Usb_Poll_Inst,USB\VID_03F0&PID_1B2A ,USB\VID_03F0&PID_1B2A&mi_00 ,USB\VID_03F0&PID_1B2A&REV_0100 ,USB\VID_03F0&PID_1B2A&REV_0100&mi_00
+"HP Color LaserJet Enterprise Flow MFP M680 (DOT4USB)"               = LJM680WF_D4Usb_Poll_Inst,USB\VID_03F0&PID_442A ,USB\VID_03F0&PID_442A&mi_00 ,USB\VID_03F0&PID_442A&REV_0100 ,USB\VID_03F0&PID_442A&REV_0100&mi_00
+"HP Color LaserJet Enterprise MFP M651 (DOT4USB)"               = LJM651_D4Usb_Poll_Inst,USB\VID_03F0&PID_1A2A ,USB\VID_03F0&PID_1A2A&mi_00 ,USB\VID_03F0&PID_1A2A&REV_0100 ,USB\VID_03F0&PID_1A2A&REV_0100&mi_00
+
+
+
+
+"HP LaserJet Enterprise MFP M630 (DOT4USB)"               = LJM630_D4Usb_Poll_Inst,USB\VID_03F0&PID_282A ,USB\VID_03F0&PID_282A&mi_00 ,USB\VID_03F0&PID_282A&REV_0100 ,USB\VID_03F0&PID_282A&REV_0100&mi_00
+"HP LaserJet Enterprise Flow MFP M630 (DOT4USB)"               = LJM630WF_D4Usb_Poll_Inst,USB\VID_03F0&PID_432A ,USB\VID_03F0&PID_432A&mi_00 ,USB\VID_03F0&PID_432A&REV_0100 ,USB\VID_03F0&PID_432A&REV_0100&mi_00
+   
+
+
+;====================================================
+
+[HP_Models.NTAMD64.6.0]
+
+[HP_Models.NTAMD64.6.2]
+
+;[D4Usb_Inst.NT]
+;AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UseInterrupt_AddReg
+;CopyFiles=Dot4Drivers_CpyFiles
+
+[D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[D4Usb_Poll_Inst_Use_Coinstaller.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+;[MSD4Usb_Poll_Inst_Use_Coinstaller.NT]
+;Include=DOT4.INF
+;Needs=DOT4USB_Inst.NT
+;AddReg=MS_AddReg_USB,MS_Dot4_AddReg
+
+[PSA320_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA320,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA440_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA440,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS4200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS4200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJ2100_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJ2100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJ4100_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJ4100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[NULL_INST.NT]
+Copyfiles = Nothing
+
+[915_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_915,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5300_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5300,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD7200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD7200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC6200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC6200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS8100_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS8100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA820_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA820,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS7400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS7400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA520_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA520,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS7200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS7200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA620V_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA620V,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS4380_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS4380,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2820_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2820,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2830_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2830,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2840_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2840,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM8050_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM8050,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM8060_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM8060,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3050_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3050,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3052_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3052,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3055_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3055,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3390_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3390,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2430_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2430,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2410_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2410,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ5200LX_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ5200LX,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[PSD5400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD5400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSF4200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSF4200,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF2200_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF2200,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB8800_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB8800,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4340_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4340,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD2500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD2500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB9100_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB9100,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM6030_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM6030,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJH470_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJH470,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJK8600_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJK8600,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[L7400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_L7400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ5500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ5500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ3600_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ3600,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ3500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ3500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC6300_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC6300,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5300H_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5300H,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC5500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC5500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD7500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD7500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJD730_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD730,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB8500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB8500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF735_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF735,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+[LJCM3530_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM3530,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP3525_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP3525,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJP3010_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJP3010,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP4520_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP4520,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Attributes_AddReg
+
+[LJCP4020_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP4020,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Attributes_AddReg
+
+[OJPA809_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA809,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJPA909a_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJPA909n_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJPA909g_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909g,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJE609a_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE609a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJE609n_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE609n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJE709a_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE709a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[OJE709n_D4Usb_Poll_Inst.NT]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE709n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+CopyFiles=Dot4Drivers_CpyFiles
+
+[J6400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J6400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4500_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4680_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4680,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4660_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4660,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC309a_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC309a,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC309b_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC309b,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJD1600_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD1600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF4400_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF4400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJD2600_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD2600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4600_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJE809a_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE809a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510g-m_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510g-m,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510a-f_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510a-f,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510n-z_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510n-z,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM9059_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM9059,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM6049f_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM6049f,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4349x_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4349x,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJ100MobileL411_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJ100MobileL411,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJ150MobileL511_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJ150MobileL511,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM4540_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM4540,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP5520_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP5520,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJCM4549_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM4549,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4555_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4555,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4559_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4559,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM551_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM551,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM601_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM601,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM525_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM525,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM575_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM575,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM712_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM712,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM775_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM775,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM725_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM725,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+
+
+[LJM855_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM855,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM880_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM880,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM750_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM750,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[OJX555_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJX555,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJX585_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJX585,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJFX585_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJFX585,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM806_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM806,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM830_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM830,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM680_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM680,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM680WF_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM680WF,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM651_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM651,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM630_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM630,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM630WF_D4Usb_Poll_Inst.NT]
+CopyFiles=Dot4Drivers_CpyFiles
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM630WF,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+;====================================================
+
+;
+; Copy Files
+;
+
+[Dot4Drivers_CpyFiles]
+HPZid412.sys
+HPZius12.sys
+
+;====================================================
+; Co-installers
+;
+[D4Usb_Poll_Inst_Use_Coinstaller.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[NULL_INST.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSA320_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[PSA440_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[PS4200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[DJ2100_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[DJ4100_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[915_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS5300_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSD7200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC6200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS8100_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS5200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSA820_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS7400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSA520_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS7200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSA620V_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS4380_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ2820_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ2830_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ2840_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCM8050_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCM8060_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ3050_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ3052_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ3055_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ3390_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ2430_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ2410_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJ5200LX_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSD5400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSF4200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC4400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJF2200_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSB8800_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC4340_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSD2500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSB9100_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCM6030_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJH470_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJK8600_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[L7400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJJ5500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJJ3600_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJJ3500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[PSC6300_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PS5300H_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC5500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSD7500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJD730_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSB8500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC4500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJF735_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+[LJCM3530_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCP3525_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJP3010_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCP4520_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCP4020_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[OJPA809_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJPA909a_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJPA909n_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJPA909g_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJE609a_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJE609n_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJE709a_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJE709n_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[J6400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[J4500_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[J4680_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[J4660_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[PSC309a_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC309b_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJD1600_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJF4400_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[DJD2600_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[PSC4600_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJE809a_D4Usb_Poll_Inst.NT.COInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJG510g-m_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJG510a-f_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJG510n-z_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[LJM9059_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCM6049f_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM4349x_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJ100MobileL411_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[OJ150MobileL511_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile
+
+[LJCM4540_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJCP5520_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJCM4549_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM4555_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM4559_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM551_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJM601_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM525_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM575_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM712_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM775_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM725_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM855_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJM880_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJM750_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[OJX555_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[OJX585_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[OJFX585_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJM806_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM830_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM680_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM680WF_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM651_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[LJM630_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+[LJM630WF_D4Usb_Poll_Inst.NT.CoInstallers]
+AddReg=Coinstaller.CoInstallers_AddReg
+CopyFiles=Coinstaller_CopyFile_OverWrite
+
+
+[Coinstaller.CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"hppldcoi.dll, PreloadDriverCoInstallEntryPoint"
+
+[Coinstaller_CopyFile]
+hppldcoi.dll,,,0x10
+difxapi.dll,,,0x10
+
+[Coinstaller_CopyFile_OverWrite]
+hppldcoi.dll,,,0x60
+difxapi.dll,,,0x60
+
+[Nothing]
+
+;====================================================
+[MS_AddReg_USB]
+HKR,,"LowerFilters",0x00010000,"dot4usb"
+
+[Dot4Usb_AddReg]
+HKR,,"LowerFilters",0x00010000,"HPZius12"
+
+[Dot4_AddReg]
+HKR,%Print_Func%,%Desc_Val%,,%HP_Device%
+
+
+;[MS_Dot4_AddReg]
+;HKR,%MS_Print_Func%,%Desc_Val%,,%HP_Device%
+;HKR,%Policy%,%CreditOnZeroLength%,0x00010001,0x1
+;HKR,%Policy%,%PiggyBackCredit%,0x00010001,0x1
+
+;[Dot4_UseInterrupt_AddReg]
+;HKR,%Policy%,%UseInterruptEndPoint%,0x00010001,0x1
+
+[Dot4_UsePolling_AddReg]
+HKR,%Policy%,%UseInterruptEndPoint%,0x00010001,0x0
+
+[Dot4_UseSynchronization_AddReg]
+HKR,%Policy%,%Dot4UsbSynchronization%,0x00010001,0x1
+
+[DOT4_Generic_Attributes_AddReg]
+HKR,%Policy%,%CreditOnZeroLength%,0x00010001,0x1
+HKR,%Policy%,%PiggyBackCredit%,0x00010001,0x1
+
+[DOT4_Attributes_AddReg]
+HKR,%Policy%,%CreditOnZeroLength%,0x00010001,0x0 
+HKR,%Policy%,%PiggyBackCredit%,0x00010001,0x1
+
+[Dot4_AddReg_PSA320]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart A320 Printer"
+
+[Dot4_AddReg_PSA440]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart A440 Printer"
+
+[Dot4_AddReg_PS4200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4200 Printer"
+
+[Dot4_AddReg_DJ2100]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F2100 Printer"
+
+[Dot4_AddReg_DJ4100]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F4100 Printer"
+
+[Dot4_AddReg_915]
+HKR,%Print_Func%,%Desc_Val%,,"HP 915 printer"
+
+[Dot4_AddReg_PS5300]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart D5300 series printer"
+
+[Dot4_AddReg_PSD7200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart D7200 Series printer"
+
+[Dot4_AddReg_PSC6200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C6200 Series printer"
+
+[Dot4_AddReg_PS8100]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C8100 Series printer"
+
+[Dot4_AddReg_PS5200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C5200 Series printer"
+
+[Dot4_AddReg_PSA820]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart A820 Series printer"
+
+[Dot4_AddReg_PS7400]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart D7400 Series printer"
+
+[Dot4_AddReg_PSA520]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart A520 Series printer"
+
+[Dot4_AddReg_PS7200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C7200 Series printer"
+
+[Dot4_AddReg_PSA620V]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart A620 Series printer"
+
+[Dot4_AddReg_PS4380]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4380 Series printer"
+
+[Dot4_AddReg_LJ2820]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet 2820 Series printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP Color LaserJet 2820 Series Scanner"
+
+[Dot4_AddReg_LJ2830]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet 2830 Series printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP Color LaserJet 2830 Series Scanner"
+
+[Dot4_AddReg_LJ2840]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet 2840 Series printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP Color LaserJet 2840 Series Scanner"
+
+[Dot4_AddReg_LJCM8050]
+HKR,%Print_Func%,%Desc_Val%,,"HP CM8050 MFP with Edgeline printer"
+
+[Dot4_AddReg_LJCM8060]
+HKR,%Print_Func%,%Desc_Val%,,"HP CM8060 MFP with Edgeline printer"
+
+[Dot4_AddReg_LJ3050]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet 3050 printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP LaserJet 3050 scanner"
+
+[Dot4_AddReg_LJ3052]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet 3052 printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP LaserJet 3052 scanner"
+
+[Dot4_AddReg_LJ3055]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet 3055 printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP LaserJet 3055 scanner"
+
+[Dot4_AddReg_LJ3390]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet 3390 printer"
+HKR,%Scan_Func%,%Desc_Val%,,"HP LaserJet 3390 scanner"
+
+[Dot4_AddReg_LJ2430]
+HKR,%Print_Func%,%Desc_Val%,,"hp LaserJet 2430 printer"
+
+[Dot4_AddReg_LJ2410]
+HKR,%Print_Func%,%Desc_Val%,,"hp LaserJet 2410 printer"
+
+[Dot4_AddReg_LJ5200LX]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet 5200LX printer"
+
+[Dot4_AddReg_PSD5400]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart D5400 series printer"
+
+[Dot4_AddReg_PSF4200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F4200 series printer"
+
+[Dot4_AddReg_PSC4400]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4400 series printer"
+
+[Dot4_AddReg_DJF2200]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F2200 series printer"
+
+[Dot4_AddReg_PSB8800]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart Pro B8800 series printer"
+
+[Dot4_AddReg_PSC4340]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4340 series printer"
+
+[Dot4_AddReg_PSD2500]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet D2500 series printer"
+
+[Dot4_AddReg_PSB9100]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart Pro B9100 series printer"
+
+[Dot4_AddReg_LJCM6030]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CM6030 MFP printer"
+
+[Dot4_AddReg_OJH470] 
+HKR,%Print_Func%,%Desc_Val%,,"Officejet H470 Printer"
+
+[Dot4_AddReg_OJK8600]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro K8600 Printer"
+
+[Dot4_AddReg_L7400]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro L7400 Printer"
+
+[Dot4_AddReg_OJJ5500]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J5500 Printer"
+
+[Dot4_AddReg_OJJ3600]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J3600 Printer"
+
+[Dot4_AddReg_OJJ3500]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J3500 Printer"
+
+
+[Dot4_AddReg_PSC6300]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C6300 series printer"
+
+[Dot4_AddReg_PS5300H]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C5300 series printer"
+
+[Dot4_AddReg_PSC5500]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C5500 series printer"
+
+[Dot4_AddReg_PSD7500]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart D7500 series printer"
+
+[Dot4_AddReg_DJD730]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet D730 printer"
+
+[Dot4_AddReg_PSB8500]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart B8500 series printer"
+
+[Dot4_AddReg_PSC4500]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4500 series printer"
+
+[Dot4_AddReg_DJF735]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F735 printer"
+[Dot4_AddReg_LJCM3530]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CM3530 MFP printer"
+
+[Dot4_AddReg_LJCP3525]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CP3525 printer"
+
+[Dot4_AddReg_LJP3010]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet P3010 Series printer"
+
+[Dot4_AddReg_LJCP4520]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CP4520 Series printer"
+
+[Dot4_AddReg_LJCP4020]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CP4020 Series printer"
+
+[Dot4_AddReg_OJPA809]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro 8000 A809 printer"
+
+[Dot4_AddReg_OJPA909a]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro 8500 A909a printer"
+
+[Dot4_AddReg_OJPA909n]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro 8500 A909n printer"
+
+[Dot4_AddReg_OJPA909g]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet Pro 8500 A909g printer"
+
+[Dot4_AddReg_OJE609a]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 6000 E609a printer"
+
+[Dot4_AddReg_OJE609n]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 6000 E609n printer"
+
+[Dot4_AddReg_OJE709a]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 6500 E709a printer"
+
+[Dot4_AddReg_OJE709n]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 6500 E709n printer"
+[Dot4_AddReg_J6400]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J6400 Series Printer"
+
+[Dot4_AddReg_J4500]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J4500 Printer"
+
+[Dot4_AddReg_J4680]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J4680 Printer"
+
+[Dot4_AddReg_J4660]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet J4660 Printer"
+
+[Dot4_AddReg_PSC309a]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C309a series Printer"
+
+[Dot4_AddReg_PSC309b]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C309b series Printer"
+
+[Dot4_AddReg_DJD1600]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet D1600 series Printer"
+
+[Dot4_AddReg_DJF4400]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet F4400 series Printer"
+
+[Dot4_AddReg_DJD2600]
+HKR,%Print_Func%,%Desc_Val%,,"HP Deskjet D2600 series Printer"
+
+[Dot4_AddReg_PSC4600]
+HKR,%Print_Func%,%Desc_Val%,,"HP Photosmart C4600 series Printer"
+
+[Dot4_AddReg_OJE809a]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 7000 E809a Printer"
+
+[Dot4_AddReg_OJG510g-m]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 4500 G510g-m Printer"
+
+[Dot4_AddReg_OJG510a-f]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 4500 G510a-f Printer"
+
+[Dot4_AddReg_OJG510n-z]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 4500 G510n-z Printer"
+
+[Dot4_AddReg_LJM9059]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet M9059 MFP Printer"
+
+[Dot4_AddReg_LJCM6049f]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CM6049f MFP Printer"
+
+[Dot4_AddReg_LJM4349x]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet M4349x MFP Printer"
+
+[Dot4_AddReg_OJ100MobileL411]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 100 Mobile L411 Printer"
+
+[Dot4_AddReg_OJ150MobileL511]
+HKR,%Print_Func%,%Desc_Val%,,"Officejet 150 Mobile L511 Printer"
+
+[Dot4_AddReg_LJCP5520]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CP5520 Series Printer"
+
+[Dot4_AddReg_LJCM4540]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CM4540 MFP Printer"
+
+[Dot4_AddReg_LJCM4549]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet CM4549 MFP Printer"
+
+[Dot4_AddReg_LJM4555]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet M4555 MFP Printer"
+
+[Dot4_AddReg_LJM4559]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet M4559 MFP Printer"
+
+[Dot4_AddReg_LJM551]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 500 color M551 Printer"
+
+[Dot4_AddReg_LJM601]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 600 M601, M602 & M603 printer series Printer"
+
+[Dot4_AddReg_LJM525]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 500 MFP M525 Series"
+
+[Dot4_AddReg_LJM575]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 500 MFP M575 Series"
+
+[Dot4_AddReg_LJM712]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 700 M712"
+
+[Dot4_AddReg_LJM775]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise 700 color MFP  M775"
+
+[Dot4_AddReg_LJM725]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise MFP M725"
+
+
+[Dot4_AddReg_LJM855]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise M855"
+
+[Dot4_AddReg_LJM880]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise flow MFP M880"
+
+[Dot4_AddReg_LJM750]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise M750"
+
+[Dot4_AddReg_OJX555]
+HKR,%Print_Func%,%Desc_Val%,,"HP Officejet Enterprise Color X555"
+
+[Dot4_AddReg_OJX585]
+HKR,%Print_Func%,%Desc_Val%,,"HP Officejet Enterprise Color MFP X585"
+
+[Dot4_AddReg_OJFX585]
+HKR,%Print_Func%,%Desc_Val%,,"HP Officejet Enterprise Color Flow MFP X585"
+
+[Dot4_AddReg_LJM806]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise M806"
+
+[Dot4_AddReg_LJM830]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise flow MFP M830"
+
+[Dot4_AddReg_LJM680]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise MFP M680"
+
+[Dot4_AddReg_LJM680WF]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise Flow MFP M680"
+
+[Dot4_AddReg_LJM651]
+HKR,%Print_Func%,%Desc_Val%,,"HP Color LaserJet Enterprise MFP M651"
+
+
+
+[Dot4_AddReg_LJM630]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise MFP M630"
+
+[Dot4_AddReg_LJM630WF]
+HKR,%Print_Func%,%Desc_Val%,,"HP LaserJet Enterprise Flow MFP M630"
+
+
+;====================================================
+
+; Add keys under Enum\enumeratorID\device-instance-id
+
+;[D4Usb_Inst.NT.HW]
+;AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UseInterrupt_AddReg
+
+[D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[D4Usb_Poll_Inst_Use_Coinstaller.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA320_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA320,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA440_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA440,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS4200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS4200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJ2100_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJ2100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJ4100_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJ4100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[915_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_915,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5300_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5300,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD7200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD7200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC6200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC6200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS8100_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS8100,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA820_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA820,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS7400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS7400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA520_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA520,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS7200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS7200,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSA620V_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSA620V,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS4380_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS4380,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2820_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2820,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2830_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2830,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2840_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2840,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM8050_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM8050,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM8060_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM8060,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+[LJ3050_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3050,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+[LJ3052_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3052,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3055_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3055,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ3390_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ3390,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2430_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2430,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ2410_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ2410,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJ5200LX_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJ5200LX,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD5400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD5400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSF4200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSF4200,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF2200_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF2200,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB8800_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB8800,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4340_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4340,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSD2500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD2500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB9100_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB9100,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM3530_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM3530,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP3525_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP3525,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+[LJCM6030_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM6030,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+[OJH470_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJH470,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJK8600_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJK8600,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[L7400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_L7400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ5500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ3500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ3600_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ3500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJJ3500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJJ3500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC6300_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC6300,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PS5300H_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PS5300H,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC5500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC5500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[PSD7500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSD7500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJD730_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD730,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSB8500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSB8500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4500,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF735_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF735,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJP3010_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJP3010,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP4520_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP4520,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Attributes_AddReg
+
+[LJCP4020_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP4020,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Attributes_AddReg
+
+[OJPA809_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA809,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJPA909a_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJPA909n_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJPA909g_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJPA909g,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJE609a_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE609a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJE609n_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE609n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[OJE709a_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE709a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJE709n_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE709n,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J6400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J6400,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4500_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4500,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4680_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4680,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[J4660_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_J4660,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC309a_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC309a,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC309b_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC309b,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[DJD1600_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD1600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJF4400_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJF4400,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[DJD2600_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_DJD2600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[PSC4600_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_PSC4600,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJE809a_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJE809a,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510g-m_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510g-m,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510a-f_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510a-f,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJG510n-z_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJG510n-z,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM9059_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM9059,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM6049f_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM6049f,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4349x_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4349x,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJ100MobileL411_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJ100MobileL411,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJ150MobileL511_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJ150MobileL511,Dot4_UsePolling_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCP5520_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCP5520,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM4540_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM4540,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJCM4549_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJCM4549,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4555_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4555,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM4559_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM4559,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM551_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM551,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM601_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM601,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM525_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM525,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM575_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM575,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM712_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM712,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM775_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM775,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM725_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM725,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM855_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM855,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM880_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM880,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM750_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM750,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJX555_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJX555,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJX585_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJX585,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[OJFX585_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_OJFX585,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+[LJM806_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM806,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM830_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM830,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM680_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM680,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM680WF_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM680WF,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM651_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM651,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+
+
+
+[LJM630_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM630,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+[LJM630WF_D4Usb_Poll_Inst.NT.HW]
+AddReg=Dot4Usb_AddReg,Dot4_AddReg_LJM630WF,Dot4_UsePolling_AddReg,Dot4_UseSynchronization_AddReg,DOT4_Generic_Attributes_AddReg
+
+
+
+
+
+;====================================================
+
+;[D4Usb_Inst.NT.Services]
+;AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+;AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[D4Usb_Poll_Inst_Use_Coinstaller.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+;[MSD4Usb_Poll_Inst_Use_Coinstaller.NT.Services]
+;Include=DOT4.INF
+;Needs=DOT4.Services
+;AddService = dot4usb,,DOT4USB_Service_Inst
+
+
+[PSA320_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSA440_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS4200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJ2100_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJ4100_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[915_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS5300_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSD7200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC6200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS8100_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS5200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSA820_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS7400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSA520_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS7200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSA620V_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS4380_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ2820_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ2830_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ2840_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCM8050_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCM8060_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ3050_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ3052_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ3055_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ3390_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ2430_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ2410_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJ5200LX_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSD5400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSF4200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC4400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJF2200_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSB8800_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC4340_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSD2500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSB9100_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCM6030_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJH470_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJK8600_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[L7400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJJ5500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJJ3600_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJJ3500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC6300_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PS5300H_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC5500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSD7500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJD730_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSB8500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC4500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJF735_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCM3530_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCP3525_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJP3010_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCP4520_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCP4020_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJPA909a_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJPA809_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJPA909n_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJPA909g_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJE609a_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJE609n_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJE709a_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJE709n_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[J6400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[J4500_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[J4680_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[J4660_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC309a_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC309b_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJD1600_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJF4400_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[DJD2600_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[PSC4600_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJE809a_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJG510g-m_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJG510a-f_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJG510n-z_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM9059_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCM6049f_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM4349x_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJ100MobileL411_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJ150MobileL511_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJCP5520_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+
+[LJCM4549_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+
+[LJCM4540_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM4555_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM4559_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM551_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+
+[LJM601_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM525_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM575_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM712_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM775_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM725_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+
+[LJM855_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM880_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM750_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJX555_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJX585_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[OJFX585_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM806_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM830_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM680_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM680WF_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM651_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+
+
+[LJM630_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+[LJM630WF_D4Usb_Poll_Inst.NT.Services]
+AddService = %Dot4_Service%,0x00000002,HP_DOT4_Inst
+AddService = %Dot4Usb_Service%,,HP_DOT4_USB_Service_Inst
+
+;
+; Service configuration info
+;
+
+[HP_Dot4_Inst]
+DisplayName     = %Dot4_Name%
+ServiceType     = 1             ; Kernel driver
+StartType       = 3             ; Manual start
+ErrorControl    = 1             ; Error ignore
+ServiceBinary   = %12%\HPZid412.sys
+
+[HP_DOT4_USB_Service_Inst]
+DisplayName    = %DOT4USB_NAME% "Dot4USB Filter"
+ServiceType    = 1 ;KERNEL_DRIVER
+StartType      = 3 ;DEMAND START
+ErrorControl   = 0 ;ERROR_IGNORE
+ServiceBinary  = %12%\HPZius12.sys
+LoadOrderGroup = extended base
+
+[DOT4USB_Service_Inst]
+DisplayName    = %MS_DOT4USB_NAME% "Dot4USB Filter"
+ServiceType    = 1 ;KERNEL_DRIVER
+StartType      = 3 ;DEMAND START
+ErrorControl   = 0 ;ERROR_IGNORE
+ServiceBinary  = %12%\dot4usb.sys
+LoadOrderGroup = extended base
+
+;====================================================
+
+[Strings]
+HP                      = "HP Inc."
+INF_Provider            = "HP Inc."
+CD                      = "hp cd"
+DOT4USB_NAME            = "USB to IEEE-1284.4 Translation Driver HPZius12"
+Dot4Usb_Service         = "HPZius12"
+Dot4_Service            = "HPZid412"
+Dot4_Name               = "IEEE-1284.4 Driver"
+Print_Func        	= "Functions\PRINT_hpz"
+Scan_Func               = "Functions\SCAN_hpz"
+MS_Print_Func         = "Functions\PRINT"
+Policy              	= "Policy"
+CreditOnZeroLength  	= "CreditOnZeroLength"
+PiggyBackCredit     	= "PiggyBackCredit"
+UseInterruptEndPoint    = "UseInterruptEndPoint"
+Desc_Val            	= "Description"
+HP_Device               = "HP Device"
+MS_DOT4USB_NAME		= "MS Dot4USB Filter"
+Dot4UsbSynchronization = "Dot4UsbSynchronization"

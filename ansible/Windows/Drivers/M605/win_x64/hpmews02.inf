@@ -1,0 +1,128 @@
+; Copyright Hewlett-Packard 2007
+; Installation file for HPFXBULK Driver
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%MFGNAME%
+DriverVer=09/01/2015,1.0.0.4
+CatalogFile=hpmews02.cat 
+
+
+;------------------------------------------------------------------------------
+;  Standard INF sections
+;------------------------------------------------------------------------------
+
+[Manufacturer]
+%MFGNAME%=DeviceList,NTamd64
+
+[DestinationDirs]
+DefaultDestDir=10,System32\Drivers 
+x64CoinstCopyFiles=11
+
+[SourceDisksFiles]
+hpfx64bulk.sys=1
+hpfx64gen.sys=1
+hpmews02.dll=1
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+;WinAMD64
+[DeviceList.NTamd64]
+
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_3817&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_3717&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_3C17&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_3617&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_2F17&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_3117&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_4D17&rev_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_4517&rev_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_4C17&rev_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_4417&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_5017&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_5217&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_5317&rev_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03f0&PID_5417&rev_0100&mi_01
+
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5c17&REV_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5d17&REV_0100&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5c17&REV_0001&mi_01
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5d17&REV_0001&mi_01
+
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5917&REV_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5a17&REV_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_5b17&REV_0100&mi_02
+
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_4e17&REV_0100&mi_02
+%DESCR1%=x64DriverInstall,USB\VID_03F0&PID_4f17&REV_0100&mi_02
+;------------------------------------------------------------------------------
+;  Windows extended (amd) 64 Sections
+;------------------------------------------------------------------------------
+
+
+[x64DriverInstall.NTamd64]
+CopyFiles=x64_DriverCopyFiles
+
+[x64_DriverCopyFiles]
+hpfx64bulk.sys,,,2
+hpfx64gen.sys,,,2
+
+[x64DriverInstall.NTamd64.Services]
+AddService=HPEWSFXBULK,2,x64DriverService
+
+[x64DriverService]
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\hpfx64bulk.sys
+AddReg=x64DriverService_AddReg
+
+[x64DriverInstall.NTamd64.CoInstallers]
+CopyFiles=x64CoinstCopyFiles
+AddReg=x64CoinstAddReg
+
+[x64CoinstCopyFiles]
+hpmews02.dll,,,2
+
+[x64CoinstAddReg]
+HKR,,CoInstallers32,0x00010000,"hpmews02.dll,CoSetup"
+HKLM,%HP_CURRENT_DEVICE_PATH%,"CurrentDeviceType",0x00010001,0
+
+[x64DriverService_AddReg]
+HKR,,FriendlyName,,%FRIENDLYNAME%
+HKR,"Parameters","MaximumTransferSize",0x10001,2048
+HKR,"Parameters","DebugLevel",0x10001,2
+
+;[ClassInstall32]
+;
+; Add the class GUID to SYSTEM\CCS\Control\Class
+;
+;AddReg = HPFXBULK_AddReg
+
+[HPFXBULK_AddReg]
+;
+; Give the class a descriptive name and an icon
+;
+HKR,,,,"HP FX Bulk"
+HKR,,Icon,,"-20"
+
+[SourceInfo]
+; Used by the co-installer to figure out where the original media is located.
+OriginalInfSourcePath = %1%
+
+[InstallData]
+DataFileName=hpmews02.dat
+
+;------------------------------------------------------------------------------
+;  String Definitions
+;------------------------------------------------------------------------------
+
+[Strings]
+MFGNAME="Hewlett-Packard"
+HP_CURRENT_DEVICE_PATH="Software\Hewlett-Packard\HP Print Settings"
+DiskName="HP Printing Software"
+DESCR1="HP EWS UPD"
+FRIENDLYNAME="HP USB EWS-FX Bulk Driver"

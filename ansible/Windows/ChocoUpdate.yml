@@ -1,0 +1,66 @@
+---
+- name:  Windows Update
+  hosts: laptops
+  gather_facts: true
+  tasks:
+    - name: Check if Logs Folder Exists
+      win_stat:
+        path: C:\Logs
+      register: my_folder
+
+    - name: Create Logs Folder if not Exists
+      win_file:
+        path: C:\Logs
+        state: directory
+      when:  my_folder.stat.exists == false
+
+    - name: Check if Scripts Folder exist
+      win_stat:
+        path: C:\Scripts
+      register: my_folder
+
+    - name: Create Scripts Folder if not Exists
+      win_file:
+        path: C:\Scripts
+        state: directory
+      when:  my_folder.stat.exists == false
+
+    - name: Copy a single file
+      win_copy:
+        src: Scripts/Choco-Update.ps1
+        dest: C:\Scripts\Choco-Update.ps1
+
+    - name: Remove Old Choco Update Scheduled Tasks
+      win_scheduled_task:
+        name: Update Chocolatey Packages
+        path: \Trio
+        state: absent
+
+    - name: Remove Old Choco Update Scheduled Tasks
+      win_scheduled_task:
+        name: Update Chocolatey Packages
+        path: \
+        state: absent
+
+    - name: Remove Weekly Reboot Scheduled Task
+      win_scheduled_task:
+        name: Weekly Reboot
+        path: \
+        state: absent
+
+    - name: Create Choco Update Scheduled Task
+      win_scheduled_task:
+        name: Choco Update
+        path: \Trio
+        description: Choco Update Script
+        actions:
+          - path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+            arguments: -File C:\Scripts\Choco-Update.ps1
+        triggers:
+          - type: weekly
+            days_of_week: thursday
+            start_boundary: "2021-06-01T03:00:00"
+        username: SYSTEM
+        run_level: highest
+        state: present
+        enabled: yes

@@ -1,0 +1,17 @@
+- hosts: laptops
+  gather_facts: no
+
+
+  tasks:
+  - name: Create directory structure
+    win_file:
+      path: C:\Temp
+      state: directory
+
+  - name: Copy RMM Script
+    win_copy:
+      src: "Scripts/rmm-workstations.ps1"
+      dest: C:\Temp\rmm-workstations.ps1
+
+  - name: Run RMM Script
+    win_shell: C:\Temp\rmm-workstations.ps1

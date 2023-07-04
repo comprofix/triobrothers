@@ -1,0 +1,413 @@
+;/*++
+;
+;© Copyright 2015 HP Development Company, L.P. All rights reserved. 
+;
+;
+;	Dot4Prt INF for all xP 64 bit OSes
+;
+;	HP Inc. Converged DOT4 version 12
+;
+;Please note that these are *test only* infs and might have entries for products that might be released well after your ;products or might never be released. To avoid any instance of "pre-announcing" products, we maintain a *Gold* inf set that ;every product going out of the door needs to use. So, when your product(s) are ready for release(about 2 weeks in advance) ;please send us a request for re-dropping the gold infs with your products in them. A good time we suggest is roughly about 1 ;week prior to going for WHQL
+;
+
+; ----- DO NOT MODIFY HEADER TEXT ABOVE THIS LINE! ------------ 
+;--*/
+[Version]
+Signature="$Windows NT$"
+Class=Dot4Print
+ClassGUID={49ce6ac8-6f86-11d2-b1e5-0080c72e74a2}
+Provider=%INF_Provider%
+DriverVer=09/16/2015,12.3.0.2
+CatalogFile.NT=HPZipr23.cat
+DriverPackageType=PlugAndPlay
+DriverPackageDisplayName="DOT4PRT"
+
+;====================================================
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceInfo]
+SourceDirectory=%1%
+ 
+[DestinationDirs]
+DefaultDestDir = 10,System32\drivers
+Dot4Print_CpyFiles = 10,System32\drivers
+
+[SourceDisksNames.amd64]
+2 = %CD%,,,"drivers\dot4\amd64\winxp"
+
+[SourceDisksFiles.amd64]
+HPZipr12.sys = 2
+
+;====================================================
+
+[Manufacturer]
+%HP%=HP_Models,NTAMD64,NTAMD64.6.2
+
+[HP_Models]
+[HP_Models.NTAMD64.6.2]
+
+[HP_Models.NTAMD64]
+;
+; This INF supports models with these PnP IDs
+; (Enumerated by any enumerator (*))
+;
+%D4Print%				   	= D4Print_Inst,DOT4\PRINT_HPZ
+
+"HP Deskjet 6980 Series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_8804&rev_0200&mi_01&print_hpz
+"HP Deskjet 6940 Series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_8904&rev_0200&mi_01&print_hpz
+"Photosmart 2570 series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_4e11&rev_0200&mi_02&print_hpz
+"Photosmart 3100 series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_5011&rev_0100&mi_02&print_hpz
+"Photosmart 3200 series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_5111&rev_0100&mi_02&print_hpz
+"Photosmart 3300 series (DOT4PRT)"         	= D4Print_Inst,dot4\vid_03f0&pid_5211&rev_0100&mi_02&print_hpz
+"Officejet 6300 series (DOT4PRT)"          	= D4Print_Inst,dot4\vid_03f0&pid_5311&rev_0200&mi_02&print_hpz
+"Officejet 4300 series (DOT4PRT)"          	= D4Print_Inst,dot4\vid_03f0&pid_5411&rev_0100&mi_02&print_hpz
+"Deskjet F300 series (DOT4PRT)"            	= D4Print_Inst,dot4\vid_03f0&pid_5511&rev_0100&mi_02&print_hpz
+"HP Photosmart A710 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_1c02&rev_0200&mi_01&print_hpz
+"HP Photosmart A610 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_1b02&rev_0200&mi_01&print_hpz
+"HP Photosmart A510 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_1a02&rev_0200&mi_01&print_hpz
+"HP Photosmart A310 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_1d02&rev_0200&mi_01&print_hpz
+"HP Photosmart A430 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_1902&rev_0200&mi_02&print_hpz
+"HP Photosmart D7300 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_c702&rev_0100&mi_01&print_hpz
+"HP Photosmart D6100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_c502&rev_0100&mi_01&print_hpz
+"HP Photosmart D7100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_c602&rev_0100&mi_01&print_hpz
+"HP Photosmart D5100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_c402&rev_0100&mi_01&print_hpz
+"HP Photosmart C4100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&pid_5711&rev_0100&mi_02&print_hpz
+"HP Photosmart C5100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_5811&rev_0100&mi_02&print_hpz
+"HP Photosmart C7100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_5a11&rev_0100&mi_02&print_hpz
+"HP Photosmart C6100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_5911&rev_0100&mi_02&print_hpz
+"HP Photosmart C3100 series (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&Pid_5611&rev_0100&mi_02&print_hpz
+"HP Officejet Pro K5400 (DOT4PRT)"      	= D4Print_Inst,dot4\vid_03f0&pid_2012&mi_01&print_hpz,dot4\vid_03f0&pid_2012&rev_0100&mi_01&print_hpz
+"HP Officejet Pro L7500 (DOT4PRT)"		= D4Print_Inst,dot4\Vid_03f0&Pid_2112&Mi_02&print_hpz,dot4\Vid_03f0&Pid_2112&rev_0100&Mi_02&print_hpz
+"HP Officejet Pro L7600 (DOT4PRT)"		= D4Print_Inst,dot4\Vid_03f0&Pid_2212&Mi_02&print_hpz,dot4\Vid_03f0&Pid_2212&rev_0100&Mi_02&print_hpz
+"HP Officejet Pro L7700 (DOT4PRT)"		= D4Print_Inst,dot4\Vid_03f0&Pid_2312&Mi_02&print_hpz,dot4\Vid_03f0&Pid_2312&rev_0100&Mi_02&print_hpz
+"HP Officejet Pro K5300 (DOT4PRT)"      	= D4Print_Inst,dot4\Vid_03f0&Pid_1f12&Mi_01&print_hpz,dot4\Vid_03f0&Pid_1f12&rev_0100&Mi_01&print_hpz
+"HP Officejet Pro L7300 (DOT4PRT)"      	= D4Print_Inst,dot4\Vid_03f0&Pid_2512&Mi_02&print_hpz,dot4\Vid_03f0&Pid_2512&rev_0100&Mi_02&print_hpz
+"HP Officejet J5700 Series (DOT4PRT)"   = D4Print_Inst,dot4\vid_03f0&pid_5b11&MI_02&print_hpz,dot4\vid_03f0&pid_5b11&rev_0100&MI_02&print_hpz
+
+"HP Photosmart D5060 Printer (DOT4PRT) " 	= D4Print_Inst,dot4\Vid_03f0&Pid_c802&mi_01&print_hpz,dot4\Vid_03f0&Pid_c802&rev_0100&mi_01&print_hpz 
+
+
+"HP Color LaserJet 3800 (DOT4PRT)"     		= D4Print_Inst,dot4\vid_03f0&pid_6817&print_hpz
+"HP Color LaserJet 3000(DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_6717&rev_0100&print_hpz,dot4\VID_03F0&PID_6717&print_hpz
+"HP Color LaserJet 3600(DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_6917&rev_0100&print_hpz,dot4\VID_03F0&PID_6917&print_hpz
+"hp color LaserJet 5550 (DOT4PRT)"		= D4Print_Inst,dot4\vid_03f0&pid_1f17&print_hpz
+"hp color LaserJet 2550 series (DOT4PRT)"  	= D4Print_Inst,dot4\Vid_03f0&Pid_1C17&print_hpz
+"hp LaserJet 2420 (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03f0&pid_2917&print_hpz
+"hp LaserJet 1320 series (DOT4PRT)" 	 	= D4Print_Inst,dot4\Vid_03f0&Pid_1D17&print_hpz
+"HP Color LaserJet 4700 (DOT4PRT)"		= D4Print_Inst,dot4\vid_03f0&pid_6217&print_hpz
+"HP Color LaserJet 4730mfp (DOT4PRT)" 		= D4Print_Inst,dot4\vid_03f0&pid_7D17&print_hpz
+"hp LaserJet 4350 (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03f0&pid_2317&print_hpz,dot4\Hewlett-Packardhp_LaDAB7&print_hpz
+"HP LaserJet 3050 (DOT4PRT)"  			= D4Print_Inst,dot4\Vid_03f0&Pid_3217&rev_0100&mi_00&print_hpz
+"HP LaserJet 3052 (DOT4PRT)"  			= D4Print_Inst,dot4\Vid_03f0&Pid_3317&rev_0100&mi_00&print_hpz
+"HP LaserJet 3055 (DOT4PRT)"  			= D4Print_Inst,dot4\Vid_03f0&Pid_3417&rev_0100&mi_00&print_hpz
+"HP LaserJet 3390 (DOT4PRT)"  			= D4Print_Inst,dot4\Vid_03f0&Pid_3517&rev_0100&mi_00&print_hpz
+"hp LaserJet 3015 (DOT4PRT)"			= D4Print_Inst,dot4\Vid_03f0&Pid_1617&print_hpz
+"hp LaserJet 3020 (DOT4PRT)"			= D4Print_Inst,dot4\Vid_03f0&Pid_1717&print_hpz
+"hp LaserJet 3030 (DOT4PRT)"			= D4Print_Inst,dot4\Vid_03f0&Pid_1817&print_hpz
+"hp LaserJet 3380 (DOT4PRT)"			= D4Print_Inst,dot4\Vid_03f0&Pid_1917&print_hpz
+"HP LaserJet 5200 (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03f0&pid_6417&print_hpz,dot4\Hewlett-Packardhp_LaB67C&print_hpz
+"HP LaserJet 5200L (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03f0&pid_6617&print_hpz,dot4\Hewlett-PackardHP_La14B6&print_hpz
+"HP LaserJet P3005  (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03F0&pid_7317&print_hpz,dot4\Hewlett-PackardHP_La023A&print_hpz
+"HP LaserJet P3004  (DOT4PRT)" 			= D4Print_Inst,dot4\vid_03F0&pid_7617&print_hpz,dot4\Hewlett-PackardHP_LaC2FB&print_hpz
+"HP LaserJet M5035 MFP (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7217&rev_0100&print_hpz,dot4\VID_03F0&PID_7217&print_hpz
+"HP LaserJet M5025 MFP (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7917&rev_0100&print_hpz,dot4\VID_03F0&PID_7917&print_hpz
+"HP LaserJet M3035 MFP (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7517&rev_0400&print_hpz,dot4\VID_03F0&PID_7517&print_hpz
+"HP LaserJet M3027 MFP (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7A17&rev_0400&print_hpz,dot4\VID_03F0&PID_7A17&print_hpz
+"HP LaserJet M4345 MFP (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7417&rev_0100&print_hpz,dot4\VID_03F0&PID_7417&print_hpz
+"HP Color LaserJet CP4005 (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7B17&rev_0100&print_hpz,dot4\VID_03F0&PID_7B17&print_hpz
+"HP Color LaserJet CM4730 MFP (DOT4PRT)" 	= D4Print_Inst,dot4\Vid_03F0&Pid_7D17&rev_0100&print_hpz,dot4\Vid_03F0&Pid_7D17&print_hpz
+"HP Color LaserJet CP3505 (DOT4PRT)" 		= D4Print_Inst,dot4\VID_03F0&PID_7817&rev_0100&print_hpz,dot4\VID_03F0&PID_7817&print_hpz
+
+"HP Color LaserJet 2820 (DOT4PRT)"              = D4Print_Inst,dot4\Vid_03f0&Pid_2617&rev_0100&mi_00&print_hpz,dot4\Vid_03f0&Pid_2617&mi_00&print_hpz
+
+"HP CM8050 MFP with Edgeline (DOT4PRT)"         = D4Print_Inst,dot4\VID_03F0&PID_7717&rev_0100&print_hpz,dot4\VID_03F0&PID_7717&print_hpz
+"HP CM8060 MFP with Edgeline (DOT4PRT)"         = D4Print_Inst,dot4\VID_03F0&PID_7117&rev_0100&print_hpz,dot4\VID_03F0&PID_7117&print_hpz
+
+"HP LaserJet M9050 MFP (DOT4PRT)"               = D4Print_Inst,dot4\VID_03F0&PID_8317&rev_0100&print_hpz,dot4\VID_03F0&PID_8317&print_hpz
+"HP LaserJet M9050 MFP (DOT4PRT)"               = D4Print_Inst,dot4\hewlett-packardhp_lae9dd&print_hpz
+"HP LaserJet M9040 MFP (DOT4PRT)"               = D4Print_Inst,dot4\VID_03F0&PID_8417&rev_0100&print_hpz,dot4\VID_03F0&PID_8417&print_hpz
+"HP LaserJet M9040 MFP (DOT4PRT)"               = D4Print_Inst,dot4\Hewlett-PackardHP_La38DC&print_hpz
+"HP Color LaserJet CM6040 MFP (DOT4PRT)"     = D4Print_Inst,dot4\VID_03F0&PID_7C17&rev_0100&print_hpz,dot4\VID_03F0&PID_7C17&print_hpz
+"HP Color LaserJet CM6040 MFP (DOT4PRT)"        = D4Print_Inst,dot4\Hewlett-PackardHP_Co23A3&print_hpz
+"HP Color LaserJet CP6015 (DOT4PRT)"     = D4Print_Inst,dot4\VID_03F0&PID_6F17&rev_0100&print_hpz,dot4\VID_03F0&PID_6F17&print_hpz
+"HP Color LaserJet CP6015 (DOT4PRT)" = D4Print_Inst,dot4\Hewlett-PackardHP_CoC45C&print_hpz
+
+"HP Photosmart A320 Printer series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_1e02&mi_01&print_hpz
+"HP Photosmart A440 Printer series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_1f02&mi_02&print_hpz
+"HP Photosmart C4200 Printer series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_5c11&mi_02&print_hpz
+"HP Deskjet F2100 Printer series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_7D04&mi_02&print_hpz
+"HP Deskjet F4100 Printer series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_7E04&mi_02&print_hpz
+
+"HP 915 (DOT4PRT)"                     = D4Print_Inst,dot4\Vid_03f0&Pid_2704&mi_02&print_hpz
+"HP Photosmart D5300 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6811&MI_01&print_hpz
+"HP Photosmart D7200 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6911&MI_01&print_hpz
+"HP Photosmart C6200 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6a11&MI_02&print_hpz
+"HP Photosmart C8100 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6411&mi_02&print_hpz
+"HP Photosmart C5200 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_5d11&mi_02&print_hpz
+"HP Photosmart A820 series  (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_2902&mi_01&print_hpz
+"HP Photosmart D7400 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_5e11&mi_01&print_hpz
+"HP Photosmart A520 series  (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_2602&MI_01&print_hpz
+"HP Photosmart C7200 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6511&mi_02&print_hpz	
+"HP Photosmart A620 series  (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_2702&mi_01&print_hpz
+"HP Photosmart C4380 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6611&mi_02&print_hpz
+
+"HP LaserJet P4014 (DOT4PRT)"                   = D4Print_Inst,dot4\VID_03F0&PID_8217&rev_0100&print_hpz,dot4\VID_03F0&PID_8217&print_hpz
+"HP LaserJet P4014 (DOT4PRT)"                   = D4Print_Inst,dot4\Hewlett-PackardHP_LaE77A&print_hpz
+
+"HP LaserJet P4515 (DOT4PRT)"                   = D4Print_Inst,dot4\VID_03F0&PID_8017&rev_0100&print_hpz,dot4\VID_03F0&PID_8017&print_hpz
+"HP LaserJet P4515 (DOT4PRT)"                   = D4Print_Inst,dot4\Hewlett-PackardHP_La26AB&print_hpz
+
+"HP LaserJet P4015 (DOT4PRT)"                   = D4Print_Inst,dot4\VID_03F0&PID_8117&rev_0100&print_hpz,dot4\VID_03F0&PID_8117&print_hpz
+"HP LaserJet P4015 (DOT4PRT)"                   = D4Print_Inst,dot4\Hewlett-PackardHP_La27BB&print_hpz
+"HP LaserJet P3010 Series (DOT4PRT)"            = D4Print_Inst,dot4\VID_03F0&PID_8D17&REV_0100&print_hpz,dot4\VID_03F0&PID_8D17&print_hpz
+
+"HP Color LaserJet CP4520 Series (DOT4PRT)"     = D4Print_Inst,dot4\VID_03F0&PID_8717&print_hpz
+"HP Color LaserJet CP4520 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_Co9E83&print_hpz
+"HP Color LaserJet CP4020 Series (DOT4PRT)"     = D4Print_Inst,dot4\VID_03F0&PID_8817&print_hpz
+"HP Color LaserJet CP4020 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_Co8E93&print_hpz
+
+
+"HP LaserJet P3010 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_La513A&print_hpz,dot4\Hewlett-PackardHP_La507A&print_hpz
+"HP LaserJet P3010 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_La90BB&print_hpz,dot4\Hewlett-PackardHP_La52FA&print_hpz
+"HP LaserJet P3010 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_La923B&print_hpz,dot4\Hewlett-PackardHP_La937B&print_hpz
+"HP LaserJet P3010 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_La53BA&print_hpz,dot4\Hewlett-PackardHP_La57FA&print_hpz
+"HP LaserJet P3010 Series (DOT4PRT)"     = D4Print_Inst,dot4\Hewlett-PackardHP_La973B&print_hpz,dot4\hewlett-packardhp_la3696&print_hpz
+
+"hp LaserJet 2430 (DOT4PRT)"           = D4Print_Inst,dot4\VID_03F0&PID_2A17&print_hpz
+"hp LaserJet 2430 (DOT4PRT)"           = D4Print_Inst,dot4\Hewlett-Packardhp_La3305&print_hpz
+"hp LaserJet 2410 (DOT4PRT)"           = D4Print_Inst,dot4\VID_03F0&PID_2517&print_hpz,dot4\Hewlett-Packardhp_La5304&print_hpz
+
+"HP LaserJet 4250 (DOT4PRT)" = D4Print_Inst,dot4\VID_03F0&PID_2417&print_hpz,dot4\Hewlett-Packardhp_La1AE6&print_hpz
+"HP LaserJet 4240 (DOT4PRT)" = D4Print_Inst,dot4\VID_03F0&PID_6A17&print_hpz,dot4\Hewlett-Packardhp_La8AE7&print_hpz
+"HP LaserJet 5200LX (DOT4PRT)"         = D4Print_Inst,dot4\vid_03f0&pid_8917&print_hpz,dot4\vid_03f0&pid_8917&rev_0100&print_hpz,dot4\Hewlett-PackardHP_La4C94&print_hpz
+
+; Clansy
+
+"HP Photosmart D5400 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6d11&mi_01&print_hpz
+"HP Deskjet F4200 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_2504&mi_02&print_hpz
+"HP Photosmart C4400 series (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_6c11&mi_02&print_hpz
+"HP Deskjet F2200 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_2404&mi_02&print_hpz
+"HP Photosmart Pro B8800 series (DOT4PRT)"= D4Print_Inst,dot4\Vid_03f0&Pid_D002&mi_01&print_hpz
+"HP Photosmart C4340 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_6711&mi_02&print_hpz
+"HP Deskjet D2500 series (DOT4PRT)"       = D4Print_Inst,dot4\Vid_03f0&Pid_1E04&mi_01&print_hpz
+"HP Photosmart Pro B9100 series (DOT4PRT)"= D4Print_Inst,dot4\vid_03f0&pid_bd02&mi_01&print_hpz
+
+"HP Color LaserJet CM3530 MFP (DOT4PRT)" = D4Print_Inst,dot4\VID_03F0&PID_8A17&print_hpz
+"HP Color LaserJet CM3530 MFP (DOT4PRT)" = D4Print_Inst,dot4\Hewlett-PackardHP_CoAB37&print_hpz
+"HP Color LaserJet CP3525 (DOT4PRT)"      = D4Print_Inst,dot4\VID_03F0&PID_8517&print_hpz
+"HP Color LaserJet CP3525 (DOT4PRT)"      = D4Print_Inst,dot4\Hewlett-PackardHP_CoF94C&print_hpz
+"HP Color LaserJet CM6030 MFP (DOT4PRT)"  = D4Print_Inst,dot4\VID_03F0&PID_8C17&print_hpz
+"HP Color LaserJet CM6030 MFP (DOT4PRT)"  = D4Print_Inst,dot4\Hewlett-PackardHP_Co94A2&print_hpz
+
+; BPD SW (Sg)
+
+"Officejet H470 (DOT4PRT)"        = D4Print_Inst,dot4\vid_03f0&pid_2812&rev_0100&mi_01&print_hpz,dot4\vid_03f0&pid_2812&mi_01&print_hpz
+"Officejet Pro L7400 (DOT4PRT)"   = D4Print_Inst,dot4\vid_03f0&pid_3412&rev_0100&MI_02&print_hpz,dot4\vid_03f0&pid_3412&MI_02&print_hpz
+"Officejet Pro K8600 (DOT4PRT)"   = D4Print_Inst,dot4\vid_03f0&pid_2712&rev_0100&mi_01&print_hpz,dot4\vid_03f0&pid_2712&mi_01&print_hpz
+"Officejet J5500 (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_3012&rev_0100&MI_02&print_hpz,dot4\vid_03f0&pid_3012&MI_02&print_hpz
+"Officejet J3500 (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_3212&rev_0100&MI_02&print_hpz,dot4\vid_03f0&pid_3212&MI_02&print_hpz
+"Officejet J3600 (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_3112&rev_0100&MI_02&print_hpz,dot4\vid_03f0&pid_3112&MI_02&print_hpz
+
+;Hemingway
+
+"HP Photosmart C6300 series(DOT4PRT)"     = D4Print_Inst,dot4\Vid_03f0&Pid_7011&mi_02&print_hpz
+"HP Photosmart C5300 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_7111&mi_02&print_hpz
+"HP Photosmart C5500 series(DOT4PRT)"     = D4Print_Inst,dot4\Vid_03f0&Pid_7211&mi_02&print_hpz
+"HP Photosmart D7500 series(DOT4PRT)"     = D4Print_Inst,dot4\Vid_03f0&Pid_6f11&mi_01&print_hpz
+"HP Deskjet D730 (DOT4PRT)"               = D4Print_Inst,dot4\Vid_03f0&Pid_2804&mi_01&print_hpz
+"HP Photosmart B8500 series(DOT4PRT)"     = D4Print_Inst,dot4\Vid_03f0&Pid_D102&mi_01&print_hpz
+"HP Photosmart C4500 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_6b11&mi_02&print_hpz
+"HP Deskjet F735 (DOT4PRT)"               = D4Print_Inst,dot4\Vid_03F0&Pid_2904&MI_02&print_hpz
+
+;BPD Spring '09 Braveheart and Yellowtail
+
+"Officejet J6400 Series (DOT4PRT)"              = D4Print_Inst,dot4\vid_03f0&pid_3312&rev_0100&mi_02&print_hpz,dot4\vid_03f0&pid_3312&mi_02&print_hpz
+"Officejet J4500 (DOT4PRT)"                     = D4Print_Inst,dot4\vid_03F0&pid_2A12&rev_0100&mi_02&print_hpz,dot4\vid_03F0&pid_2A12&mi_02&print_hpz
+"Officejet J4680 (DOT4PRT)"                     = D4Print_Inst,dot4\vid_03F0&pid_2C12&rev_0100&mi_02&print_hpz,dot4\vid_03F0&pid_2C12&mi_02&print_hpz
+"Officejet J4660 (DOT4PRT)"                     = D4Print_Inst,dot4\vid_03F0&pid_2B12&rev_0100&mi_02&print_hpz,dot4\vid_03F0&pid_2B12&mi_02&print_hpz
+
+; BPD Spring '09
+
+"Officejet Pro 8000 A809 (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_3612&mi_01&print_hpz,dot4\vid_03F0&pid_3612&rev_0100&mi_01&print_hpz
+"Officejet Pro 8500 A909a (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_3812&mi_02&print_hpz,dot4\vid_03F0&pid_3812&rev_0100&mi_02&print_hpz
+"Officejet Pro 8500 A909g (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_3912&mi_02&print_hpz,dot4\vid_03F0&pid_3912&rev_0100&mi_02&print_hpz
+"Officejet Pro 8500 A909n (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_4012&mi_02&print_hpz,dot4\vid_03F0&pid_4012&rev_0100&mi_02&print_hpz
+
+"Officejet 6000 E609a (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_4212&mi_01&print_hpz,dot4\vid_03F0&pid_4212&rev_0100&mi_01&print_hpz
+"Officejet 6000 E609n (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_4312&mi_01&print_hpz,dot4\vid_03F0&pid_4312&rev_0100&mi_01&print_hpz
+"Officejet 6500 E709a (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_4412&mi_02&print_hpz,dot4\vid_03F0&pid_4412&rev_0100&mi_02&print_hpz
+"Officejet 6500 E709n (DOT4PRT)" = D4Print_Inst,dot4\vid_03F0&pid_4512&mi_02&print_hpz,dot4\vid_03F0&pid_4512&rev_0100&mi_02&print_hpz
+
+;DCS Batali
+
+"HP Photosmart C309a series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_7311&mi_02&print_hpz
+"HP Photosmart C309b series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_7911&mi_02&print_hpz
+"HP Deskjet D1600 series (DOT4PRT)"       = D4Print_Inst,dot4\Vid_03F0&Pid_7F11&mi_01&print_hpz
+"HP Deskjet F4400 series (DOT4PRT)"       = D4Print_Inst,dot4\Vid_03F0&Pid_7711&mi_02&print_hpz
+"HP Deskjet D2600 series (DOT4PRT)"       = D4Print_Inst,dot4\Vid_03F0&Pid_8011&mi_01&print_hpz
+"HP Photosmart C4600 series (DOT4PRT)"    = D4Print_Inst,dot4\Vid_03f0&Pid_7411&mi_02&print_hpz
+
+; BPD Fall'09
+
+"Officejet 7000 E809a (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_4612&rev_0100&mi_01&print_hpz,dot4\vid_03f0&pid_4612&mi_01&print_hpz
+"Officejet 4500 G510g-m (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_2d12&rev_0100&mi_02&print_hpz,dot4\vid_03f0&pid_2d12&mi_02&print_hpz
+"Officejet 4500 G510a-f (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_4712&rev_0100&mi_02&print_hpz,dot4\vid_03f0&pid_4712&mi_02&print_hpz 
+"Officejet 4500 G510n-z (DOT4PRT)" = D4Print_Inst,dot4\Vid_03f0&Pid_2e12&rev_0100&mi_02&print_hpz,dot4\Vid_03f0&Pid_2e12&mi_02&print_hpz
+"HP LaserJet M9059 MFP(DOT4PRT)"                = D4Print_Inst,dot4\VID_03F0&PID_9617&REV_0100&print_hpz,dot4\VID_03F0&PID_9617&print_hpz
+"HP LaserJet M9059 MFP (DOT4PRT)"               = D4Print_Inst,dot4\Hewlett-PackardHP_La8800&print_hpz
+"HP Color LaserJet CM6049f MFP(DOT4PRT)"        = D4Print_Inst,dot4\VID_03F0&PID_9517&REV_0100&print_hpz,dot4\VID_03F0&PID_9517&print_hpz
+"HP Color LaserJet CM6049f MFP(DOT4PRT)"        = D4Print_Inst,dot4\Hewlett-PackardHP_Co1D89&print_hpz
+"HP LaserJet M4349x MFP(DOT4PRT)"               = D4Print_Inst,dot4\VID_03F0&PID_9717&REV_0100&print_hpz,dot4\VID_03F0&PID_9717&print_hpz
+"HP LaserJet M4349x MFP (DOT4PRT)"              = D4Print_Inst,dot4\Hewlett-PackardHP_La9862&print_hpz
+
+; BPD Fall'10
+
+"Officejet 100 Mobile L411 (DOT4PRT)"       = D4Print_Inst,dot4\vid_03f0&pid_4912&rev_0100&mi_01&print_hpz,dot4\vid_03f0&pid_4912&mi_01&print_hpz
+"Officejet 150 Mobile L511 (DOT4PRT)"     = D4Print_Inst,dot4\vid_03f0&pid_5012&rev_0100&mi_02&print_hpz,dot4\vid_03f0&pid_5012&mi_02&print_hpz
+"Officejet 4500 K710 (DOT4PRT)" = D4Print_Inst,dot4\vid_03f0&pid_5712&rev_0100&mi_02&print_hpz,dot4\vid_03f0&pid_5712&mi_02&print_hpz
+
+"HP Color LaserJet CM4540 MFP (DOT4PRT)"	= D4Print_Inst,DOT4\VID_03F0&PID_9917&REV_0100&dot4&print_hpz,dot4\VID_03F0&PID_9917&dot4&print_hpz
+"HP Color LaserJet CM4540 MFP (DOT4PRT)"	= D4Print_Inst,DOT4\Hewlett-PackardHP_CoFA77&print_hpz
+
+"HP Color LaserJet CP5520 Series (DOT4PRT)"	= D4Print_Inst,DOT4\VID_03F0&PID_9B17&REV_0100&dot4&print_hpz,dot4\VID_03F0&PID_9B17&dot4&print_hpz
+"HP Color LaserJet CP5520 Series (DOT4PRT)"	= D4Print_Inst,DOT4\Hewlett-PackardHP_Co6287&print_hpz
+
+
+"HP Color LaserJet CM4549 MFP (DOT4PRT)"	= D4Print_Inst,DOT4\VID_03F0&PID_A217&REV_0100&dot4&print_hpz,dot4\VID_03F0&PID_A217&dot4&print_hpz
+"HP Color LaserJet CM4549 MFP (DOT4PRT)"	= D4Print_Inst,DOT4\Hewlett-PackardHP_CoFBAB&print_hpz
+
+"HP LaserJet M4555 MFP (DOT4PRT)"			= D4Print_Inst,dot4\VID_03F0&PID_9C17&REV_0100&dot4&print_hpz,dot4\VID_03F0&PID_9C17&dot4&print_hpz,dot4\VID_03F0&PID_9C17&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La08FD&print_hpz,dot4\VID_03F0&PID_9C17&rev_0100&mi_00&print_hpz,dot4\VID_03F0&PID_9C17&mi_00&print_hpz,dot4\VID_03F0&PID_9C17&rev_0100&print_hpz  
+"HP LaserJet M4559 MFP(DOT4PRT)"	=  D4Print_Inst,DOT4\VID_03F0&PID_A317&REV_0100&dot4&print_hpz,dot4\VID_03F0&PID_A317&dot4&print_hpz,DOT4\Hewlett-PackardHP_La09ED&print_hpz,dot4\VID_03F0&PID_A317&MI_00&dot4&print_hpz ,DOT4\VID_03F0&PID_A317&REV_0100&print_hpz,dot4\VID_03F0&PID_A317&print_hpz,dot4\VID_03F0&PID_A317&mi_00&print_hpz
+
+"HP LaserJet Enterprise 500 color M551 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_A417&print_hpz ,dot4\VID_03F0&PID_A417&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_A417&dot4&print_hpz ,dot4\VID_03F0&PID_A417&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_A417&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-ParkardHP_La3A56&print_hpz ,dot4\Hewlett-PackardHP_La7E3D&dot4 ,dot4\Hewlett-PackardHP_La7E3D&dot4&print_hpz
+"HP LaserJet Enterprise 500 color M551 (DOT4PRT)"	= D4Print_Inst ,Hewlett-ParkardHP_La3A56&print_hpz 
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_A517&print_hpz ,dot4\VID_03F0&PID_A517&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_A517&dot4&print_hpz ,dot4\VID_03F0&PID_A517&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_A517&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_LAD678&print_hpz ,dot4\Hewlett-PackardHP_LAD678&dot4,dot4\Hewlett-PackardHP_LAD678&dot4&print_hpz,dot4\dot4\VID_03F0&PID_A517
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_A517&print_hpz ,dot4\VID_03F0&PID_A517&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_A517&dot4&print_hpz ,dot4\VID_03F0&PID_A517&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_A517&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_LaD738&print_hpz ,dot4\Hewlett-PackardHP_LaD738&dot4,dot4\Hewlett-PackardHP_LaD738&dot4&print_hpz,dot4\VID_03F0&PID_A517
+"HP LaserJet Enterprise 600 M601, M602 & M603 printer series (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_A517&print_hpz ,dot4\VID_03F0&PID_A517&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_A517&dot4&print_hpz ,dot4\VID_03F0&PID_A517&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_A517&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La17F9&print_hpz ,dot4\Hewlett-PackardHP_La17F9&dot4,dot4\Hewlett-PackardHP_La17F9&dot4&print_hpz,dot4\VID_03F0&PID_A517
+"HP LaserJet Enterprise 500 color M551 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_LAD678&print_hpz 
+"HP LaserJet Enterprise 500 color M551 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_LaD738&print_hpz 
+"HP LaserJet Enterprise 500 color M551 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La17F9&print_hpz 
+"HP LaserJet Enterprise 500 MFP M525 Series (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La2DAB&print_hpz 
+"HP LaserJet Enterprise 500 MFP M525 Series (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_9E17&print_hpz ,dot4\VID_03F0&PID_9E17&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_9E17&dot4&print_hpz ,dot4\VID_03F0&PID_9E17&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_9E17&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La2DAB&print_hpz ,dot4\Hewlett-PackardHP_La2DAB&dot4 ,dot4\Hewlett-PackardHP_La2DAB&dot4&print_hpz
+"HP LaserJet Enterprise 500 MFP M575 Series (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_LaF157&print_hpz 
+"HP LaserJet Enterprise 500 MFP M575 Series (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_9F17&print_hpz ,dot4\VID_03F0&PID_9F17&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_9F17&dot4&print_hpz ,dot4\VID_03F0&PID_9F17&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_9F17&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_LaF157&print_hpz ,dot4\Hewlett-PackardHP_LaF157&dot4 ,dot4\Hewlett-PackardHP_LaF157s&dot4&print_hpz
+
+"HP LaserJet Enterprise 700 M712 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La4ba9&print_hpz 
+"HP LaserJet Enterprise 700 M712 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_A617&print_hpz ,dot4\VID_03F0&PID_A617&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_A617&dot4&print_hpz ,dot4\VID_03F0&PID_A617&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_A617&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La4ba9&print_hpz ,dot4\Hewlett-PackardHP_La4ba9&dot4 ,dot4\Hewlett-PackardHP_La4ba9&dot4&print_hpz
+
+"HP LaserJet Enterprise 700 color MFP  M775 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La6b56&print_hpz 
+"HP LaserJet Enterprise 700 color MFP  M775 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_9A17&print_hpz ,dot4\VID_03F0&PID_9A17&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_9A17&dot4&print_hpz ,dot4\VID_03F0&PID_9A17&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_9A17&rev_0100&MI_00&dot4&print_hpz ,dot4\HHewlett-PackardHP_La6b56&print_hpz ,dot4\Hewlett-PackardHP_La6b56&dot4 ,dot4\Hewlett-PackardHP_La6b56&dot4&print_hpz
+
+"HP LaserJet Enterprise MFP M725 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La86f0&print_hpz 
+"HP LaserJet Enterprise MFP M725 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_9D17&print_hpz ,dot4\VID_03F0&PID_9D17&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_9D17&dot4&print_hpz ,dot4\VID_03F0&PID_9D17&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_9D17&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La86f0&print_hpz ,dot4\Hewlett-PackardHP_La86f0&dot4 ,dot4\Hewlett-PackardHP_La86f0&dot4&print_hpz
+
+"HP LaserJet Enterprise M806 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La16c6&print_hpz 
+"HP LaserJet Enterprise M806 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1F2A&print_hpz ,dot4\VID_03F0&PID_1F2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1F2A&dot4&print_hpz ,dot4\VID_03F0&PID_1F2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1F2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La16c6&print_hpz ,dot4\Hewlett-PackardHP_La16c6&dot4 ,dot4\Hewlett-PackardHP_La16c6&dot4&print_hpz
+
+"HP LaserJet Enterprise flow MFP M830 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_La7da1&print_hpz 
+"HP LaserJet Enterprise flow MFP M830 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1E2A&print_hpz ,dot4\VID_03F0&PID_1E2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1E2A&dot4&print_hpz ,dot4\VID_03F0&PID_1E2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1E2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_La7da1&print_hpz ,dot4\Hewlett-PackardHP_La7da1&dot4 ,dot4\Hewlett-PackardHP_La7da1&dot4&print_hpz
+
+"HP Color LaserJet Enterprise M855 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Cofd5e&print_hpz 
+"HP Color LaserJet Enterprise M855 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1C2A&print_hpz ,dot4\VID_03F0&PID_1C2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1C2A&dot4&print_hpz ,dot4\VID_03F0&PID_1C2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1C2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Cofd5e&print_hpz ,dot4\Hewlett-PackardHP_Cofd5e&dot4 ,dot4\Hewlett-PackardHP_Cofd5e&dot4&print_hpz
+
+"HP Color LaserJet Enterprise flow MFP M880 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Co6bd1&print_hpz 
+"HP Color LaserJet Enterprise flow MFP M880 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1D2A&print_hpz ,dot4\VID_03F0&PID_1D2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1D2A&dot4&print_hpz ,dot4\VID_03F0&PID_1D2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1D2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Co6bd1&print_hpz ,dot4Hewlett-PackardHP_Co6bd1&dot4 ,dot4\Hewlett-PackardHP_Co6bd1&dot4&print_hpz
+
+"HP Color LaserJet Enterprise M750 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Cofdae&print_hpz 
+"HP Color LaserJet Enterprise M750 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_372a&print_hpz ,dot4\VID_03F0&PID_372a&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_372a&dot4&print_hpz ,dot4\VID_03F0&PID_372a&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_372a&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Cofdae&print_hpz ,dot4\Hewlett-PackardHP_Cofdae&dot4 ,dot4\Hewlett-PackardHP_Cofdae&dot4&print_hpz
+
+"HP Officejet Enterprise Color X555 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Ofce48&print_hpz 
+"HP Officejet Enterprise Color X555 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_352A&print_hpz ,dot4\VID_03F0&PID_352A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_352A&dot4&print_hpz ,dot4\VID_03F0&PID_352A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_352A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Ofce48&print_hpz ,dot4\Hewlett-PackardHP_Ofce48&dot4 ,dot4\Hewlett-PackardHP_Ofce48&dot4&print_hpz
+
+"HP Officejet Enterprise Color MFP X585 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Of2503&print_hpz 
+"HP Officejet Enterprise Color MFP X585 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_2B2A&print_hpz ,dot4\VID_03F0&PID_2B2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_2B2A&dot4&print_hpz ,dot4\VID_03F0&PID_2B2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_2B2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Of2503&print_hpz ,dot4\Hewlett-PackardHP_Of2503&dot4 ,dot4\Hewlett-PackardHP_Of2503&dot4&print_hpz
+
+"HP Officejet Enterprise Color Flow MFP X585 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Of588a&print_hpz 
+"HP Officejet Enterprise Color Flow MFP X585 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_362A&print_hpz ,dot4\VID_03F0&PID_362A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_362A&dot4&print_hpz ,dot4\VID_03F0&PID_362A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_362A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Of588a&print_hpz ,dot4\Hewlett-PackardHP_Of588a&dot4 ,dot4\Hewlett-PackardHP_Of588a&dot4&print_hpz
+
+"HP Color LaserJet Enterprise MFP M680 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Co9ffc&print_hpz
+"HP Color LaserJet Enterprise MFP M680 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1B2A&print_hpz ,dot4\VID_03F0&PID_1B2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1B2A&dot4&print_hpz ,dot4\VID_03F0&PID_1B2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1B2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Co9ffc&print_hpz ,dot4\Hewlett-PackardHP_Co9ffc&dot4 ,dot4\Hewlett-PackardHP_Co9ffc&dot4&print_hpz
+
+"HP Color LaserJet Enterprise Flow MFP M680 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Co70c6&print_hpz
+"HP Color LaserJet Enterprise Flow MFP M680 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_442A&print_hpz ,dot4\VID_03F0&PID_442A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_442A&dot4&print_hpz ,dot4\VID_03F0&PID_442A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_442A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Co70c6&print_hpz ,dot4\Hewlett-PackardHP_Co70c6&dot4 ,dot4\Hewlett-PackardHP_Co70c6&dot4&print_hpz
+
+"HP Color LaserJet Enterprise MFP M651 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Cofd3e&print_hpz
+"HP Color LaserJet Enterprise MFP M651 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_1A2A&print_hpz ,dot4\VID_03F0&PID_1A2A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_1A2A&dot4&print_hpz ,dot4\VID_03F0&PID_1A2A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_1A2A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Cofd3e&print_hpz ,dot4\Hewlett-PackardHP_Cofd3e&dot4 ,dot4\Hewlett-PackardHP_Cofd3e&dot4&print_hpz
+
+
+
+
+
+
+"HP LaserJet Enterprise MFP M630 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Lad760&print_hpz
+"HP LaserJet Enterprise MFP M630 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_282A&print_hpz ,dot4\VID_03F0&PID_282A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_282A&dot4&print_hpz ,dot4\VID_03F0&PID_282A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_282A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Lad760&print_hpz ,dot4\Hewlett-PackardHP_Lad760&dot4 ,dot4\Hewlett-PackardHP_Lad760&dot4&print_hpz
+
+"HP LaserJet Enterprise Flow MFP M630 (DOT4PRT)"	= D4Print_Inst ,Hewlett-PackardHP_Ladebf&print_hpz
+"HP LaserJet Enterprise Flow MFP M630 (DOT4PRT)"	= D4Print_Inst ,dot4\VID_03F0&PID_432A&print_hpz ,dot4\VID_03F0&PID_432A&REV_0100&dot4&print_hpz ,dot4\VID_03F0&PID_432A&dot4&print_hpz ,dot4\VID_03F0&PID_432A&MI_00&dot4&print_hpz ,dot4\VID_03F0&PID_432A&rev_0100&MI_00&dot4&print_hpz ,dot4\Hewlett-PackardHP_Ladebf&print_hpz ,dot4\Hewlett-PackardHP_Ladebf&dot4 ,dot4\Hewlett-PackardHP_Ladebf&dot4&print_hpz
+
+
+
+
+;=========================================================================================
+
+[D4Print_Inst.NT]
+CopyFiles=Dot4Print_CpyFiles
+AddReg=Dot4Print_AddReg
+
+;====================================================
+
+[Dot4Print_CpyFiles]
+HPZipr12.sys
+
+;====================================================
+
+[D4Print_Inst.NT.HW]
+AddReg=Dot4Print_AddReg
+
+
+;====================================================
+
+;
+; Registry entry for Driver
+;
+
+[Dot4Print_AddReg]
+;
+; Add keys under Enum\enumeratorID\device-instance-id
+;
+HKR,,"ReadSocketId",0x00010001,0x0002
+HKR,,"WriteSocketId",0x00010001,0x0002
+HKR,,"ReadBufferSize",0x00010001,0x7FFF
+HKR,,"WriteBufferSize",0x00010001,0x7FFF
+
+
+;====================================================
+
+[D4Print_Inst.NT.Services]
+;
+; Add the Dot4 driver as a service
+;
+AddService=HPZipr12,0x00000002,D4Print_Inst.AddService
+
+
+
+[D4Print_Inst.AddService]
+;
+; Service configuration info
+;
+DisplayName     = %Dot4Print_Name%
+ServiceType     = 1             ; Kernel driver
+StartType       = 3             ; Manual start
+ErrorControl    = 1             ; Error ignore
+ServiceBinary   = %12%\HPZipr12.sys
+
+;====================================================
+
+[Strings]
+Dot4Print_Name      = "Print Class Driver for IEEE-1284.4 HPZipr12"
+HP                  = "HP Inc."
+INF_Provider        = "HP Inc."
+CD                  = "hp cd"
+D4Print		    = "IEEE 1284.4 compatible printer"
